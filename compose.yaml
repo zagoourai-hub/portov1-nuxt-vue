@@ -1,0 +1,43 @@
+services:
+  app:
+    build: .
+    env_file: ./docker/.env
+    environment:
+      DATABASE_URL: file:/app/.data/portfolio.db
+      MEDIA_DIRECTORY: /app/.data/media
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - portfolio-data:/app/.data
+    restart: unless-stopped
+
+  setup:
+    extends:
+      service: app
+    profiles: [tools]
+    volumes:
+      - ./docker:/workspace
+    command: ["/bin/sh", "-c", "node node_modules/prisma/build/index.js migrate deploy && cd /workspace && exec node /app/scripts/provision-owner.ts"]
+
+  email:
+    extends:
+      service: app
+    profiles: [tools]
+    command:
+      - node
+      - -e
+      - >-
+        const { DatabaseSync } = require('node:sqlite');
+        const db = new DatabaseSync('/app/.data/portfolio.db', { readOnly: true });
+        const user = db.prepare('SELECT email FROM user WHERE id = ?').get(process.env.OWNER_USER_ID || '');
+        console.log(user?.email || 'Email pemilik tidak ditemukan. Periksa OWNER_USER_ID di docker/.env.');
+        db.close();
+
+  reset:
+    extends:
+      service: setup
+    profiles: [tools]
+    command: ["/bin/sh", "-c", "cd /workspace && exec node /app/scripts/provision-owner.ts --reset"]
+
+volumes:
+  portfolio-data:

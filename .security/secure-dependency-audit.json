@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 1,
+  "timestamp": "2026-10-29T10:03:29.455Z",
+  "root": "D:\\Project\\project\\Web\\Portfolio\\Nuxt js\\portfolio-1",
+  "verdict": "SAFE_NO_KNOWN_IOC",
+  "locks": {
+    "pnpm-lock.yaml": "c08188c5ecdaf90ba9bd18b3fbe59375fdc419f24300b54f57b01820d6f3584d",
+    "node_modules/.pnpm/lock.yaml": "396122165b9b05b2a11ca39eb32c72ccd3e52da05526d978f76d2d89a0ddbf45"
+  },
+  "packagePairs": 1236,
+  "manifests": 1551,
+  "direct": {
+    "@iconify-json/lucide": "^1.2.147",
+    "@iconify-json/simple-icons": "1.2.101",
+    "@nuxt/ui": "^4.12.0",
+    "nuxt": "^4.6.2",
+    "tailwindcss": "^4.3.3",
+    "better-auth": "1.7.14",
+    "@prisma/client": "7.10.1",
+    "@prisma/adapter-libsql": "7.10.1",
+    "zod": "4.4.3",
+    "sharp": "0.35.5",
+    "pdf-lib": "1.17.1",
+    "busboy": "1.6.0",
+    "@better-auth/prisma-adapter": "1.7.14",
+    "h3": "1.15.11",
+    "@nuxt/eslint": "^1.17.0",
+    "eslint": "^10.13.0",
+    "eslint-plugin-better-tailwindcss": "^4.10.0",
+    "typescript": "~6.0.0",
+    "vue-tsc": "^3.3.13",
+    "prisma": "7.10.1",
+    "@types/busboy": "1.5.5"
+  },
+  "ioc": {
+    "source": "https://raw.githubusercontent.com/wiz-sec-public/wiz-research-iocs/refs/heads/main/reports/keyv-packages.csv",
+    "sha256": "138c7a54f25d90ae339f4de652c49bd663c0a8a4accbf921707178b0e90330a0",
+    "retrievedAt": "2026-10-29T10:03:29.455Z",
+    "pairs": 2235
+  },
+  "findings": [],
+  "lifecycle": [
+    {
+      "name": "@colordx/core",
+      "version": "7.3.0",
+      "event": "prepare",
+      "script": "node --eval \"if (process.env.CI) process.exit(0)\" && husky || true"
+    },
+    {
+      "name": "@humanfs/core",
+      "version": "0.19.2",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "@humanfs/node",
+      "version": "0.16.8",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "@humanfs/types",
+      "version": "0.15.0",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "@humanwhocodes/module-importer",
+      "version": "1.0.1",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "@humanwhocodes/retry",
+      "version": "0.4.3",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "@isaacs/cliui",
+      "version": "8.0.2",
+      "event": "prepare",
+      "script": "npm run compile"
+    },
+    {
+      "name": "@isaacs/fs-minipass",
+      "version": "4.0.1",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "@parcel/watcher",
+      "version": "2.5.6",
+      "event": "install",
+      "script": "node scripts/build-from-source.js"
+    },
+    {
+      "name": "@prisma/engines",
+      "version": "7.10.1",
+      "event": "postinstall",
+      "script": "node scripts/postinstall.js"
+    },
+    {
+      "name": "@rollup/plugin-inject",
+      "version": "5.0.5",
+      "event": "prepare",
+      "script": "if [ ! -d 'dist' ]; then pnpm build; fi"
+    },
+    {
+      "name": "@sindresorhus/is",
+      "version": "7.2.0",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "acorn",
+      "version": "8.18.0",
+      "event": "prepare",
+      "script": "cd ..; npm run build:main"
+    },
+    {
+      "name": "are-docs-informative",
+      "version": "0.0.2",
+      "event": "prepare",
+      "script": "husky install"
+    },
+    {
+      "name": "aria-hidden",
+      "version": "1.2.6",
+      "event": "prepare",
+      "script": "husky install"
+    },
+    {
+      "name": "balanced-match",
+      "version": "4.0.4",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "brace-expansion",
+      "version": "5.0.6",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "chownr",
+      "version": "3.0.0",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "ci-info",
+      "version": "4.4.0",
+      "event": "prepare",
+      "script": "husky install || true"
+    },
+    {
+      "name": "cliui",
+      "version": "9.0.1",
+      "event": "prepare",
+      "script": "npm run compile"
+    },
+    {
+      "name": "colortranslator",
+      "version": "5.0.0",
+      "event": "prepare",
+      "script": "pnpm build"
+    },
+    {
+      "name": "comment-parser",
+      "version": "1.4.7",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "crossws",
+      "version": "0.4.10",
+      "event": "prepare",
+      "script": "obuild --stub"
+    },
+    {
+      "name": "deepmerge-ts",
+      "version": "8.0.2",
+      "event": "prepare",
+      "script": "husky"
+    },
+    {
+      "name": "embla-carousel-wheel-gestures",
+      "version": "8.1.0",
+      "event": "prepare",
+      "script": "tsdx build --format cjs,esm,umd"
+    },
+    {
+      "name": "enhanced-resolve",
+      "version": "5.24.5",
+      "event": "prepare",
+      "script": "husky"
+    },
+    {
+      "name": "entities",
+      "version": "4.5.0",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "esbuild",
+      "version": "0.27.7",
+      "event": "postinstall",
+      "script": "node install.js"
+    },
+    {
+      "name": "esbuild",
+      "version": "0.28.0",
+      "event": "postinstall",
+      "script": "node install.js"
+    },
+    {
+      "name": "eslint-merge-processors",
+      "version": "2.0.0",
+      "event": "prepare",
+      "script": "simple-git-hooks"
+    },
+    {
+      "name": "eslint-plugin-jsdoc",
+      "version": "63.3.3",
+      "event": "prepare",
+      "script": "husky"
+    },
+    {
+      "name": "eslint-processor-vue-blocks",
+      "version": "2.0.0",
+      "event": "prepare",
+      "script": "simple-git-hooks"
+    },
+    {
+      "name": "eslint-visitor-keys",
+      "version": "3.4.3",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "foreground-child",
+      "version": "3.3.1",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "fuse.js",
+      "version": "7.5.0",
+      "event": "prepare",
+      "script": "husky install"
+    },
+    {
+      "name": "get-caller-file",
+      "version": "2.0.5",
+      "event": "prepare",
+      "script": "tsc"
+    },
+    {
+      "name": "glob",
+      "version": "10.5.0",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "glob",
+      "version": "13.0.6",
+      "event": "prepare",
+      "script": "tshy && bash scripts/build.sh"
+    },
+    {
+      "name": "globals",
+      "version": "17.9.0",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "hashery",
+      "version": "1.5.1",
+      "event": "prepare",
+      "script": "pnpm build"
+    },
+    {
+      "name": "hookified",
+      "version": "1.15.1",
+      "event": "prepare",
+      "script": "pnpm build"
+    },
+    {
+      "name": "is-reference",
+      "version": "1.2.1",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "isexe",
+      "version": "4.0.0",
+      "event": "prepare",
+      "script": "tshy && bash build.sh"
+    },
+    {
+      "name": "jackspeak",
+      "version": "3.4.3",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "lightningcss",
+      "version": "1.32.0",
+      "event": "prepare",
+      "script": "patch-package"
+    },
+    {
+      "name": "lightningcss",
+      "version": "1.33.0",
+      "event": "prepare",
+      "script": "patch-package"
+    },
+    {
+      "name": "lru-cache",
+      "version": "10.4.3",
+      "event": "prepare",
+      "script": "tshy && bash fixup.sh"
+    },
+    {
+      "name": "lru-cache",
+      "version": "11.4.0",
+      "event": "prepare",
+      "script": "tshy && bash scripts/build.sh"
+    },
+    {
+      "name": "magic-regexp",
+      "version": "0.10.0",
+      "event": "prepare",
+      "script": "npx simple-git-hooks && pnpm build"
+    },
+    {
+      "name": "minimatch",
+      "version": "10.2.5",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "minimatch",
+      "version": "9.0.9",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "minipass",
+      "version": "7.1.3",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "minizlib",
+      "version": "3.1.0",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "node-fetch",
+      "version": "2.7.0",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "nth-check",
+      "version": "2.1.1",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "orderedmap",
+      "version": "2.1.1",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "package-json-from-dist",
+      "version": "1.0.1",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "path-scurry",
+      "version": "1.11.1",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "path-scurry",
+      "version": "2.0.2",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "postcss-selector-parser",
+      "version": "7.1.4",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "postgres",
+      "version": "3.4.7",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "prisma",
+      "version": "7.10.1",
+      "event": "preinstall",
+      "script": "node scripts/preinstall-entry.js"
+    },
+    {
+      "name": "prosemirror-changeset",
+      "version": "2.4.1",
+      "event": "prepare",
+      "script": "pm-buildhelper src/changeset.ts"
+    },
+    {
+      "name": "prosemirror-commands",
+      "version": "1.7.1",
+      "event": "prepare",
+      "script": "pm-buildhelper src/commands.ts"
+    },
+    {
+      "name": "prosemirror-dropcursor",
+      "version": "1.8.2",
+      "event": "prepare",
+      "script": "pm-buildhelper src/dropcursor.ts"
+    },
+    {
+      "name": "prosemirror-gapcursor",
+      "version": "1.4.1",
+      "event": "prepare",
+      "script": "pm-buildhelper src/index.ts"
+    },
+    {
+      "name": "prosemirror-history",
+      "version": "1.5.0",
+      "event": "prepare",
+      "script": "pm-buildhelper src/history.ts"
+    },
+    {
+      "name": "prosemirror-inputrules",
+      "version": "1.5.1",
+      "event": "prepare",
+      "script": "pm-buildhelper src/index.ts"
+    },
+    {
+      "name": "prosemirror-keymap",
+      "version": "1.2.3",
+      "event": "prepare",
+      "script": "pm-buildhelper src/keymap.ts"
+    },
+    {
+      "name": "prosemirror-model",
+      "version": "1.25.7",
+      "event": "prepare",
+      "script": "pm-buildhelper src/index.ts"
+    },
+    {
+      "name": "prosemirror-schema-list",
+      "version": "1.5.1",
+      "event": "prepare",
+      "script": "pm-buildhelper src/schema-list.ts"
+    },
+    {
+      "name": "prosemirror-state",
+      "version": "1.4.4",
+      "event": "prepare",
+      "script": "pm-buildhelper src/index.ts"
+    },
+    {
+      "name": "prosemirror-transform",
+      "version": "1.12.0",
+      "event": "prepare",
+      "script": "pm-buildhelper src/index.ts"
+    },
+    {
+      "name": "prosemirror-view",
+      "version": "1.41.8",
+      "event": "prepare",
+      "script": "pm-buildhelper src/index.ts"
+    },
+    {
+      "name": "ljharb-monorepo-symlink-test",
+      "version": "0.0.0",
+      "event": "postinstall",
+      "script": "lerna bootstrap"
+    },
+    {
+      "name": "ret",
+      "version": "0.5.1",
+      "event": "prepare",
+      "script": "tsc -p tsconfig.build.json"
+    },
+    {
+      "name": "rollup",
+      "version": "4.60.4",
+      "event": "prepare",
+      "script": "husky && npm run prepare:patch && node scripts/check-release.js || npm run build:prepare"
+    },
+    {
+      "name": "rope-sequence",
+      "version": "1.3.4",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "set-cookie-parser",
+      "version": "3.2.1",
+      "event": "prepare",
+      "script": "husky"
+    },
+    {
+      "name": "signal-exit",
+      "version": "4.1.0",
+      "event": "prepare",
+      "script": "tsc -p tsconfig.json && tsc -p tsconfig-esm.json && bash ./scripts/fixup.sh"
+    },
+    {
+      "name": "smob",
+      "version": "1.6.2",
+      "event": "prepare",
+      "script": "husky"
+    },
+    {
+      "name": "tar",
+      "version": "7.5.15",
+      "event": "prepare",
+      "script": "tshy && bash scripts/build.sh"
+    },
+    {
+      "name": "terser",
+      "version": "5.47.1",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "tinyexec",
+      "version": "1.3.1",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "ts-api-utils",
+      "version": "2.5.0",
+      "event": "prepare",
+      "script": "husky"
+    },
+    {
+      "name": "ts-api-utils",
+      "version": "2.5.0",
+      "event": "prepare",
+      "script": "husky"
+    },
+    {
+      "name": "tsconfig-paths-webpack-plugin",
+      "version": "4.2.0",
+      "event": "prepare",
+      "script": "husky install"
+    },
+    {
+      "name": "undici",
+      "version": "8.12.2",
+      "event": "prepare",
+      "script": "husky && node ./scripts/platform-shell.js"
+    },
+    {
+      "name": "unrs-resolver",
+      "version": "1.12.2",
+      "event": "postinstall",
+      "script": "node postinstall.js"
+    },
+    {
+      "name": "vue-demi",
+      "version": "0.14.10",
+      "event": "postinstall",
+      "script": "node -e \"try{require('./scripts/postinstall.js')}catch(e){}\""
+    },
+    {
+      "name": "vue-demi",
+      "version": "0.14.10",
+      "event": "postinstall",
+      "script": "node -e \"try{require('./scripts/postinstall.js')}catch(e){}\""
+    },
+    {
+      "name": "w3c-keyname",
+      "version": "2.2.8",
+      "event": "prepare",
+      "script": "npm run build"
+    },
+    {
+      "name": "web-worker",
+      "version": "1.5.0",
+      "event": "prepare",
+      "script": "tsup"
+    },
+    {
+      "name": "wheel-gestures",
+      "version": "2.2.48",
+      "event": "prepare",
+      "script": "tsdx build; husky install"
+    },
+    {
+      "name": "y18n",
+      "version": "5.0.8",
+      "event": "prepare",
+      "script": "npm run compile"
+    },
+    {
+      "name": "yallist",
+      "version": "5.0.0",
+      "event": "prepare",
+      "script": "tshy"
+    },
+    {
+      "name": "yargs-parser",
+      "version": "22.0.0",
+      "event": "prepare",
+      "script": "npm run compile"
+    },
+    {
+      "name": "yargs",
+      "version": "18.0.0",
+      "event": "prepare",
+      "script": "npm run compile"
+    }
+  ],
+  "limits": [
+    "IOC dan indikator statis saja, bukan jaminan bebas malware.",
+    "Tiga entri modul Go diverifikasi formatnya dan dikecualikan dari pencocokan npm; lockfile tidak menggunakan git dependency.",
+    "Git belum memiliki commit; symlink tidak ditelusuri."
+  ]
+}

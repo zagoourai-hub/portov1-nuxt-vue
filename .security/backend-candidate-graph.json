@@ -1,0 +1,4445 @@
+{
+  "timestamp": "2026-10-28T16:10:59.272Z",
+  "direct": {
+    "better-auth": "1.7.14",
+    "prisma": "7.10.1",
+    "@prisma/client": "7.10.1",
+    "@prisma/adapter-libsql": "7.10.1",
+    "zod": "4.4.3",
+    "sharp": "0.35.5",
+    "pdf-lib": "1.17.1",
+    "busboy": "1.6.0",
+    "@types/busboy": "1.5.5",
+    "typescript": "6.0.3",
+    "@better-auth/prisma-adapter": "1.7.14"
+  },
+  "packages": [
+    {
+      "name": "@better-auth/core",
+      "version": "1.7.14",
+      "integrity": "sha512-ByhdrGVwp/el+hoTYKSVOHIH23/lQj9TQ1txdGcWOg22tnfr3hJ6ukzySooeYj/R36XsQgBhkJqIp8mKsNeErA==",
+      "scripts": {
+        "dev": "tsdown --watch",
+        "test": "vitest",
+        "build": "tsdown",
+        "coverage": "vitest run --coverage --coverage.provider=istanbul",
+        "typecheck": "tsc --project tsconfig.json",
+        "lint:types": "attw --profile esm-only --pack .",
+        "lint:package": "publint run --strict --pack false"
+      },
+      "engines": {},
+      "dependencies": {
+        "zod": "^4.5.4",
+        "@standard-schema/spec": "^1.1.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "jose": "^6.1.0",
+        "kysely": "^0.28.5 || ^0.29.0",
+        "nanostores": "^1.0.1",
+        "better-call": "1.4.4",
+        "@better-auth/utils": "^0.4.2 || ^0.5.0",
+        "@opentelemetry/api": "^1.9.0",
+        "@better-fetch/fetch": "1.3.3"
+      },
+      "peerDependenciesMeta": {
+        "@opentelemetry/api": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "@better-auth/drizzle-adapter",
+      "version": "1.7.14",
+      "integrity": "sha512-5RC8Ec5Ur15FWsS4As9/VrlRbB3+9EfShxIpA5A1FcD6IgPxFvzQNkAm2+FYx9LUSqx47NPf9hBTG2GUCMP9Ig==",
+      "scripts": {
+        "dev": "tsdown --watch",
+        "test": "vitest",
+        "build": "tsdown",
+        "coverage": "vitest run --coverage --coverage.provider=istanbul",
+        "typecheck": "tsc --noEmit",
+        "lint:types": "attw --profile esm-only --pack .",
+        "lint:package": "publint run --strict --pack false"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "drizzle-orm": "^0.45.2 || >=1.0.0-rc.1 <2.0.0",
+        "@better-auth/core": "^1.7.14",
+        "@better-auth/utils": "^0.4.2 || ^0.5.0"
+      },
+      "peerDependenciesMeta": {
+        "drizzle-orm": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "@better-auth/kysely-adapter",
+      "version": "1.7.14",
+      "integrity": "sha512-4wkqj8a8JVpWDYLlgzfbk7eOaWCFkL6HHQd6CLamFKaC8vNsXew1x4v5dE5O6dGr8j4g5qMISS+BAvOuIvBevg==",
+      "scripts": {
+        "dev": "tsdown --watch",
+        "test": "vitest",
+        "build": "tsdown",
+        "coverage": "vitest run --coverage --coverage.provider=istanbul",
+        "typecheck": "tsc --noEmit",
+        "lint:types": "attw --profile esm-only --pack .",
+        "lint:package": "publint run --strict --pack false"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "kysely": "^0.28.17 || ^0.29.0",
+        "@better-auth/core": "^1.7.14",
+        "@better-auth/utils": "^0.4.2 || ^0.5.0"
+      },
+      "peerDependenciesMeta": {
+        "kysely": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "@better-auth/memory-adapter",
+      "version": "1.7.14",
+      "integrity": "sha512-Ojv9BcmFyHuTHha9ZM/NUW1ut9J84wLngta+07Es0Ejn8kekqP5aHBpZd5Z8AvADs5iJUOWvQGFmGlPWAKJgBg==",
+      "scripts": {
+        "dev": "tsdown --watch",
+        "test": "vitest",
+        "build": "tsdown",
+        "coverage": "vitest run --coverage --coverage.provider=istanbul",
+        "typecheck": "tsc --noEmit",
+        "lint:types": "attw --profile esm-only --pack .",
+        "lint:package": "publint run --strict --pack false"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@better-auth/core": "^1.7.14",
+        "@better-auth/utils": "^0.4.2 || ^0.5.0"
+      },
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@better-auth/mongo-adapter",
+      "version": "1.7.14",
+      "integrity": "sha512-6IA0RSPZFMdRwwnLZ9oWnDIiD0y0o0azTHUfa01BNU2AFJgMDkeiASUV3bKcJBskzQoyQrff74eFYTsTSeeVUQ==",
+      "scripts": {
+        "dev": "tsdown --watch",
+        "test": "vitest",
+        "build": "tsdown",
+        "coverage": "vitest run --coverage --coverage.provider=istanbul",
+        "typecheck": "tsc --noEmit",
+        "lint:types": "attw --profile esm-only --pack .",
+        "lint:package": "publint run --strict --pack false"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "mongodb": "^6.0.0 || ^7.0.0",
+        "@better-auth/core": "^1.7.14",
+        "@better-auth/utils": "^0.4.2 || ^0.5.0"
+      },
+      "peerDependenciesMeta": {
+        "mongodb": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "@better-auth/prisma-adapter",
+      "version": "1.7.14",
+      "integrity": "sha512-mF6t5xqeZNWzUe0ErmrSdzQmtslJscmu9X8Mp5QmROlpnnAzvSc70RILu8lHms8CePt7N34+KRH1QvYjGFrVGQ==",
+      "scripts": {
+        "dev": "tsdown --watch",
+        "test": "vitest",
+        "build": "tsdown",
+        "coverage": "vitest run --coverage --coverage.provider=istanbul",
+        "typecheck": "tsc --noEmit",
+        "lint:types": "attw --profile esm-only --pack .",
+        "lint:package": "publint run --strict --pack false"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "prisma": "^5.0.0 || ^6.0.0 || ^7.0.0",
+        "@prisma/client": "^5.0.0 || ^6.0.0 || ^7.0.0",
+        "@better-auth/core": "^1.7.14",
+        "@better-auth/utils": "^0.4.2 || ^0.5.0"
+      },
+      "peerDependenciesMeta": {
+        "prisma": {
+          "optional": true
+        },
+        "@prisma/client": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "@better-auth/telemetry",
+      "version": "1.7.14",
+      "integrity": "sha512-PtKFzsH7gje/WJuUPDjckOoNFazsq8NMt3AdiXIPzHl7tZULcNGTKAX8K7+yn0rG6cO/4mtMgpOjhtilElOnmg==",
+      "scripts": {
+        "dev": "tsdown --watch",
+        "build": "tsdown",
+        "typecheck": "tsc --project tsconfig.json",
+        "lint:types": "attw --profile esm-only --pack .",
+        "lint:package": "publint run --strict --pack false"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@better-auth/core": "^1.7.14",
+        "@better-auth/utils": "^0.4.2 || ^0.5.0",
+        "@better-fetch/fetch": "1.3.3"
+      },
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@better-auth/utils",
+      "version": "0.5.1",
+      "integrity": "sha512-WETqw5vQ52uQ/xwWR4E8rTgT6fDEr/wnS+otDNkBCa/69281FCF32OKDdQUcahMCnjsvqXBNiEvAQHFB0EVRRg==",
+      "scripts": {
+        "bump": "bumpp",
+        "test": "vitest",
+        "build": "tsdown",
+        "lint:fix": "biome check . --write",
+        "typecheck": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {
+        "@noble/hashes": "^2.0.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@better-fetch/fetch",
+      "version": "1.3.3",
+      "integrity": "sha512-U6SlDt/GUWtK2JAxS/NhdoYTEim+EL1G5byz2TUj83KjLZBUpYzb5SmX0aXaCnbGkAjFKnV/o/0+cyXMbEcqqg==",
+      "scripts": {
+        "dev": "tsdown --watch",
+        "bump": "bumpp",
+        "lint": "biome check .",
+        "build": "tsdown",
+        "release": "bun run build && npm publish --access public",
+        "lint:fix": "biome check . --apply",
+        "typecheck": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@electric-sql/pglite",
+      "version": "0.4.3",
+      "integrity": "sha512-ichuWTgtd4mOM1G4SpyGJa5trT03lWbMypDV0fUXUCXg5hiHqVAz/bZyV68NqmkLB7WcYmj1RMJVSp8HV/v/ZQ==",
+      "scripts": {
+        "dev": "concurrently \"tsup --watch\" \"sleep 1 && tsx scripts/bundle-wasm.ts\" \"pnpm dev-server\"",
+        "lint": "eslint ./src ./tests --report-unused-disable-directives --max-warnings 0",
+        "test": "pnpm test:basic && pnpm test:node",
+        "build": "pnpm build:js",
+        "format": "prettier --write ./src ./tests",
+        "build:js": "tsup && tsx scripts/bundle-wasm.ts",
+        "test:bun": "pnpm test:clean && pnpm bun test --timeout 15000 tests/basic.test.js tests/pgvector.test.js tests/live.test.js tests/targets/runtimes/node-fs.test.js",
+        "test:web": "pnpm test:clean && concurrently -s first --hide 1 --prefix none -k \"sleep 2 && vitest --fileParallelism false tests/targets/web/*.test.web.*\" \"npx http-server --port 3334 ./\"",
+        "test:deno": "cd tests/targets/deno && deno task test",
+        "test:node": "pnpm test:clean && pnpm vitest tests/targets/runtimes/node-*.test.js",
+        "typecheck": "tsc --noEmit",
+        "dev-server": "pnpm http-server ../",
+        "stylecheck": "pnpm lint && prettier --check ./src ./tests",
+        "test:basic": "pnpm test:clean && vitest tests/*.test.js tests/*.test.ts tests/**/*.test.js tests/**/*.test.ts",
+        "test:clean": "rm -rf ./pgdata-test",
+        "check:exports": "attw . --pack --profile node16",
+        "test:runtimes": "pnpm test:bun && pnpm test:node",
+        "test:integration": "pnpm test:runtimes && pnpm test:web"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@electric-sql/pglite-socket",
+      "version": "0.1.3",
+      "integrity": "sha512-LAciWM0M1dCL8hlsxu2venbVZcdxema0BtDfpWYVqr+Y468UADw0pFWidhKw1M8sfJ8rdLT71tjMmnirf/IZRQ==",
+      "scripts": {
+        "lint": "eslint ./src ./tests --report-unused-disable-directives --max-warnings 0",
+        "test": "vitest",
+        "build": "tsup",
+        "format": "prettier --write ./src ./tests",
+        "typecheck": "tsc",
+        "stylecheck": "pnpm lint && prettier --check ./src ./tests",
+        "check:exports": "attw . --pack --profile node16",
+        "pglite-server:dev": "tsx --watch src/scripts/server.ts",
+        "example:basic-server": "tsx examples/basic-server.ts"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@electric-sql/pglite": "0.4.3"
+      },
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@electric-sql/pglite-tools",
+      "version": "0.3.3",
+      "integrity": "sha512-AlzLJTRJ8+UFgK8CmxIpyIpJ0+YaFw02IiOSdYrqxwPXdSyeIShz8aa9Tq+tYFXdPwcaMp/Fc80mQZ1dkOQ/wg==",
+      "scripts": {
+        "lint": "eslint ./src ./tests --report-unused-disable-directives --max-warnings 0",
+        "test": "vitest",
+        "build": "tsup",
+        "format": "prettier --write ./src ./tests",
+        "typecheck": "tsc",
+        "stylecheck": "pnpm lint && prettier --check ./src ./tests",
+        "check:exports": "attw . --pack --profile node16"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@electric-sql/pglite": "0.4.3"
+      },
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@emnapi/runtime",
+      "version": "1.11.3",
+      "integrity": "sha512-Xz4Tpyki7XyrpbUK1jR1AhdAdaXyhhY4lZ3neLodmhpuWfy2PAQN5B46sAiU4liOXGLkHypn/qU+jvfWSCYYLA==",
+      "scripts": {
+        "build": "node ./script/build.js"
+      },
+      "engines": {},
+      "dependencies": {
+        "tslib": "^2.4.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/colour",
+      "version": "1.1.0",
+      "integrity": "sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==",
+      "scripts": {
+        "build:cjs": "esbuild node_modules/color/index.js --bundle --platform=node --outfile=color.cjs",
+        "build:dts": "dts-bundle-generator ./dts-src.ts -o index.d.ts --project tsconfig.build.json --external-inlines color --external-inlines color-convert --export-referenced-types=false",
+        "build": "npm run build:cjs && npm run build:dts",
+        "test": "node --test"
+      },
+      "engines": {
+        "node": ">=18"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-darwin-arm64",
+      "version": "0.35.5",
+      "integrity": "sha512-QRUlFQ0WxvdWyqqG/WtI3iupfD5rBzmCHXSdPsY91sAtVtTo7Q4cb6zOccZ3gqEqkr0f1As1ehLqmEpDsRf+lg==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {
+        "@img/sharp-libvips-darwin-arm64": "1.3.4"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-darwin-x64",
+      "version": "0.35.5",
+      "integrity": "sha512-+BR255RhDlpygUpOc/Jdt1nT6DQ3XG/ERo5wbcdOf5Q320dKtPCKPLR1LJs9VGXRaMa8l1uUa0tkCNOXiAxZUw==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {
+        "@img/sharp-libvips-darwin-x64": "1.3.4"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-freebsd-wasm32",
+      "version": "0.35.5",
+      "integrity": "sha512-Y/z91nEZ4uIBX5X3nfTovjU9lHNKFYbL2lpHCLVNmXQK03VIZvXBBt0KxbPGp2SdGSF+2mQU4e+hQaWOt86iAw==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {
+        "@img/sharp-wasm32": "0.35.5"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-libvips-darwin-arm64",
+      "version": "1.3.4",
+      "integrity": "sha512-5R89nBYiRdUlSWJxPhO+GVtaXzXSxKnRu/xqMn3KTA3L9EB9Oy/P+Nn2f2vlhPuUdy/Zusb2DarbyTpGCfEDuw==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-libvips-darwin-x64",
+      "version": "1.3.4",
+      "integrity": "sha512-iR2OKH80yi0U+dUplyh3/xdpFvps6YkCwsXenIJxqxR1v9o+xtKTGbS9H7cps+2Vxjc8B1j96p75NmTGjIhtpQ==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-libvips-linux-arm",
+      "version": "1.3.4",
+      "integrity": "sha512-LmRtTsOHuvM2+wlO2Db37dx5MiZhB0FvSunciw48YjdOkZz9KAiRbm8ujeMOA1INqmei5NapFxYEK1D1ZSidmw==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-libvips-linux-arm64",
+      "version": "1.3.4",
+      "integrity": "sha512-Y3dgX/6lE2QhQb+Gxy0WZxfg9MEm/JBjamZpS2IklP7xIQoKN4hzAm7KcMVGtaVDt3neE9OKBC7vAfonA/Lr1A==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-libvips-linux-ppc64",
+      "version": "1.3.4",
+      "integrity": "sha512-Le6boB8Tai0Nis+gIxIpKx68UDVVIqdR8Tin5Yf1z2LJJQLDJvCDRqRu+jC2qCoD+eIomonmOwB4smBRxfVpYQ==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-libvips-linux-riscv64",
+      "version": "1.3.4",
+      "integrity": "sha512-aHkkIEHPRdQEegJN20MLmGtxYD9R2wQr3Cwpddnu5+YKMt6Uzax7S9h5gpZTo8wyrGuZSlfQ63OevL5mTyOC7Q==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-libvips-linux-s390x",
+      "version": "1.3.4",
+      "integrity": "sha512-ra/mB6MikESDUO7Yg+Mi95bFBb9GsObURuhnOv3OqknjGe9sZrG8tCe9q0xSIGrtLgvgw0gKnFWcK4blSgQOuQ==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-libvips-linux-x64",
+      "version": "1.3.4",
+      "integrity": "sha512-GJ//SSXbnwSDes02umB3nDJLFcQzw8a18V8fyhqr6tV515tOEMdImjjxj1AoafMRz56F3PHgftnj1QEKSU1zkw==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-libvips-linuxmusl-arm64",
+      "version": "1.3.4",
+      "integrity": "sha512-hvulFwtjUcagsis6BBxHwGFwWoNZjgYmULGVrZcyfNbjA8hKILbRxGg15/7w5HDyXHXUos/j6baAWqnCyQ2DWA==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-libvips-linuxmusl-x64",
+      "version": "1.3.4",
+      "integrity": "sha512-6zXKeE/p39I1AmA3cJG35eyBGNqNddLnUXjhwBnsGjFPWqf5VKkDBEqaEkPDoTEtkxwi2vv8Tcr2mDyP4So7Fg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-linux-arm",
+      "version": "0.35.5",
+      "integrity": "sha512-LEaXK2WdXVK5ykcw0buWyPMsmLLL2vpHLD6yrNSW+JGEL3BZPA4tpKN6iaMc4AxTTAoaX/sU1rOL51lcIz48ZQ==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {
+        "@img/sharp-libvips-linux-arm": "1.3.4"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-linux-arm64",
+      "version": "0.35.5",
+      "integrity": "sha512-LYVx5JTsOM2CBzmxreh+nl64/3H6Xb09iSLknqH47z2T2DFFxDeFLP5y4dJwe6H7uGQlHPyEEtIqyo3DYsRwdQ==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {
+        "@img/sharp-libvips-linux-arm64": "1.3.4"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-linux-ppc64",
+      "version": "0.35.5",
+      "integrity": "sha512-QVxAAq8evVRI9ia2vqgwrmWucn5Dfv+JdWzj75pD8omHLPSP7f8p20O8jxzjCcuCEQEOtYOZUmX1hkiZ0kdevA==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {
+        "@img/sharp-libvips-linux-ppc64": "1.3.4"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-linux-riscv64",
+      "version": "0.35.5",
+      "integrity": "sha512-LtdreXguaavKODPIfzJ4kffx7UNt1omwtK0rch4EBbbSTXPnxWmYSayXdLJw0fJzQ97kHt1gL/yh4tvU+nCyRQ==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {
+        "@img/sharp-libvips-linux-riscv64": "1.3.4"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-linux-s390x",
+      "version": "0.35.5",
+      "integrity": "sha512-UZasTOFiYzotTsGOCu42BfUzP6Tu6Do/947iRm1RsLKvlllxwGcn4RN27LibGWceix4Y+Pmw3jsnTcCQIgWjqA==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {
+        "@img/sharp-libvips-linux-s390x": "1.3.4"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-linux-x64",
+      "version": "0.35.5",
+      "integrity": "sha512-SxFtLTeJInhAA9Q836kux2vZNeOBQEx658qvbboZScr0wIARym3IcGmW7KpVD5sbVg0Ojy+udFQdayYIZyoNog==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {
+        "@img/sharp-libvips-linux-x64": "1.3.4"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-linuxmusl-arm64",
+      "version": "0.35.5",
+      "integrity": "sha512-9HbMclmI1zlNkFRs3z9/eBtDjfD0sGlrX1z6b1qwmiFY5ElDLh4BC0LPBdVp7z1DXFiKlIcznf+ZlsuZzLxQqg==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {
+        "@img/sharp-libvips-linuxmusl-arm64": "1.3.4"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-linuxmusl-x64",
+      "version": "0.35.5",
+      "integrity": "sha512-4KOphqB035HrVdqLZfCgMzzERrQkkzOwRhl4OAkRO1YCldbaFjySXMaK534Mo0V+LndnlJk+sbUyLeU0ULyD1A==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {
+        "@img/sharp-libvips-linuxmusl-x64": "1.3.4"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-wasm32",
+      "version": "0.35.5",
+      "integrity": "sha512-Ptsga1su4tQx+LLF1ECS9U6nz5kmrXKo6XVbtR48Ke3ZRxxgaWBu7IDtEe1quo8hiupwm6WFqxVlXaSf7IINGQ==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {
+        "@emnapi/runtime": "^1.11.3"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-webcontainers-wasm32",
+      "version": "0.35.5",
+      "integrity": "sha512-hfhF/FmoQyTUkA0bIKFOtw536BQSeBMe6BF6QyWlrPxT754+TFLaZ7sKKTfvvM0yJgKgaYTwnFCIZ/GuDw5SUA==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {
+        "@img/sharp-wasm32": "0.35.5"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-win32-arm64",
+      "version": "0.35.5",
+      "integrity": "sha512-X4t7g+7ZA5DKblCBEXGjUqqemj4vczING/5viFwAL8h4N3qYeyjwdCvRLHi4EdOUI+2Z7UFlp1VM+p/AuEtm6Q==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-win32-ia32",
+      "version": "0.35.5",
+      "integrity": "sha512-5Zm82LoBc43nhwNybZlG7Y1KO//Zhsn306fQl29ZOuStHLGTo3BWL83q3cznX0poxSAMuYL1On/BHBxkBeKr6A==",
+      "scripts": {},
+      "engines": {
+        "node": "^20.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@img/sharp-win32-x64",
+      "version": "0.35.5",
+      "integrity": "sha512-x76eH0vEiHlcMQu8Y8IenntaACtddpT6W0wmXtWrnKcnKI7ME5DdgqhAD6SEWOEl1v2zDvkZDhFA9KnURwpfqg==",
+      "scripts": {},
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@libsql/client",
+      "version": "0.17.4",
+      "integrity": "sha512-lYayFWasDV78A+TjlEhr6ubb3odBV6OHjb+wdp8VQcyWWAEIjuwbCHaraEUS4m4yWoo0BvZo96It4VdzZRmRWw==",
+      "scripts": {
+        "test": "jest --runInBand",
+        "build": "npm run build:cjs && npm run build:esm",
+        "typedoc": "rm -rf ./docs && typedoc",
+        "prebuild": "rm -rf ./lib-cjs ./lib-esm",
+        "build:cjs": "tsc -p tsconfig.build-cjs.json",
+        "build:esm": "tsc -p tsconfig.build-esm.json",
+        "postbuild": "cp package-cjs.json ./lib-cjs/package.json",
+        "typecheck": "tsc --noEmit",
+        "lint-staged": "lint-staged",
+        "format:check": "prettier --check .",
+        "prepublishOnly": "npm run build"
+      },
+      "engines": {},
+      "dependencies": {
+        "libsql": "^0.5.28",
+        "js-base64": "^3.7.5",
+        "@libsql/core": "^0.17.4",
+        "promise-limit": "^2.7.0",
+        "@libsql/hrana-client": "^0.10.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@libsql/core",
+      "version": "0.17.4",
+      "integrity": "sha512-LqF9gIvnJ38nmAH1y/ChizHqDO/MO1wLgA96XrraulEEbqXxLjleSH92YWTolbuJKgPUmGu4aJk9W3UnAcxLOQ==",
+      "scripts": {
+        "test": "jest --runInBand",
+        "build": "npm run build:cjs && npm run build:esm",
+        "typedoc": "rm -rf ./docs && typedoc",
+        "prebuild": "rm -rf ./lib-cjs ./lib-esm",
+        "build:cjs": "tsc -p tsconfig.build-cjs.json",
+        "build:esm": "tsc -p tsconfig.build-esm.json",
+        "postbuild": "cp package-cjs.json ./lib-cjs/package.json",
+        "typecheck": "tsc --noEmit",
+        "format:check": "prettier --check .",
+        "prepublishOnly": "npm run build"
+      },
+      "engines": {},
+      "dependencies": {
+        "js-base64": "^3.7.5"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@libsql/darwin-arm64",
+      "version": "0.5.29",
+      "integrity": "sha512-K+2RIB1OGFPYQbfay48GakLhqf3ArcbHqPFu7EZiaUcRgFcdw8RoltsMyvbj5ix2fY0HV3Q3Ioa/ByvQdaSM0A==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@libsql/darwin-x64",
+      "version": "0.5.29",
+      "integrity": "sha512-OtT+KFHsKFy1R5FVadr8FJ2Bb1mghtXTyJkxv0trocq7NuHntSki1eUbxpO5ezJesDvBlqFjnWaYYY516QNLhQ==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@libsql/hrana-client",
+      "version": "0.10.0",
+      "integrity": "sha512-OoA4EMqRAC7kn7V2P6EQqRcpZf2W+AjsNIyCizBg339Tq/aMC7sRnzs3SklderhmQWAqEzvv8A2vhxVmWpkVvw==",
+      "scripts": {
+        "clean": "rm -rf ./lib-cjs ./lib-esm ./*.tsbuildinfo",
+        "prepublishOnly": "npm run clean-build",
+        "prebuild": "rm -rf ./lib-cjs ./lib-esm",
+        "build": "npm run build:cjs && npm run build:esm",
+        "build:cjs": "tsc -p tsconfig.build-cjs.json",
+        "build:esm": "tsc -p tsconfig.build-esm.json",
+        "postbuild": "cp package-cjs.json ./lib-cjs/package.json",
+        "clean-build": "npm run clean && npm run build",
+        "typecheck": "tsc --noEmit",
+        "test": "jest --runInBand"
+      },
+      "engines": {},
+      "dependencies": {
+        "@libsql/isomorphic-ws": "^0.1.5",
+        "js-base64": "^3.7.5"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@libsql/isomorphic-ws",
+      "version": "0.1.5",
+      "integrity": "sha512-DtLWIH29onUYR00i0GlQ3UdcTRC6EP4u9w/h9LxpUZJWRMARk6dQwZ6Jkd+QdwVpuAOrdxt18v0K2uIYR3fwFg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "ws": "^8.13.0",
+        "@types/ws": "^8.5.4"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@libsql/linux-arm-gnueabihf",
+      "version": "0.5.29",
+      "integrity": "sha512-CD4n4zj7SJTHso4nf5cuMoWoMSS7asn5hHygsDuhRl8jjjCTT3yE+xdUvI4J7zsyb53VO5ISh4cwwOtf6k2UhQ==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@libsql/linux-arm-musleabihf",
+      "version": "0.5.29",
+      "integrity": "sha512-2Z9qBVpEJV7OeflzIR3+l5yAd4uTOLxklScYTwpZnkm2vDSGlC1PRlueLaufc4EFITkLKXK2MWBpexuNJfMVcg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@libsql/linux-arm64-gnu",
+      "version": "0.5.29",
+      "integrity": "sha512-gURBqaiXIGGwFNEaUj8Ldk7Hps4STtG+31aEidCk5evMMdtsdfL3HPCpvys+ZF/tkOs2MWlRWoSq7SOuCE9k3w==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@libsql/linux-arm64-musl",
+      "version": "0.5.29",
+      "integrity": "sha512-fwgYZ0H8mUkyVqXZHF3mT/92iIh1N94Owi/f66cPVNsk9BdGKq5gVpoKO+7UxaNzuEH1roJp2QEwsCZMvBLpqg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@libsql/linux-x64-gnu",
+      "version": "0.5.29",
+      "integrity": "sha512-y14V0vY0nmMC6G0pHeJcEarcnGU2H6cm21ZceRkacWHvQAEhAG0latQkCtoS2njFOXiYIg+JYPfAoWKbi82rkg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@libsql/linux-x64-musl",
+      "version": "0.5.29",
+      "integrity": "sha512-gquqwA/39tH4pFl+J9n3SOMSymjX+6kZ3kWgY3b94nXFTwac9bnFNMffIomgvlFaC4ArVqMnOZD3nuJ3H3VO1w==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@libsql/win32-x64-msvc",
+      "version": "0.5.29",
+      "integrity": "sha512-4/0CvEdhi6+KjMxMaVbFM2n2Z44escBRoEYpR+gZg64DdetzGnYm8mcNLcoySaDJZNaBd6wz5DNdgRmcI4hXcg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@neon-rs/load",
+      "version": "0.0.4",
+      "integrity": "sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw==",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc",
+        "prepack": "npm run build",
+        "pretest": "npm run build"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@noble/ciphers",
+      "version": "2.4.0",
+      "integrity": "sha512-AnjFn0Jv92laAkvMrghlFZq4qQCIN/4DxFV/eooqtC2YTjB7kBeLMS2T9KJX4Dn+ZVXLOwK0lSgqDtx9gvxtiw==",
+      "scripts": {
+        "test": "node test/index.ts",
+        "build": "tsc",
+        "check": "jsbt-check",
+        "format": "prettier --write 'src/**/*.{js,ts}' 'test/**/*.{js,ts,mjs}'",
+        "test:bun": "bun test/index.ts",
+        "benchmark": "node benchmark/ciphers.ts",
+        "test:slow": "node test/crosstest.test.ts slow",
+        "build:clean": "rm *.{js,d.ts} 2> /dev/null",
+        "benchmark:size": "bismar -bsm",
+        "benchmark:thirdparty": "cd benchmark/thirdparty; npm ci; node index.ts"
+      },
+      "engines": {
+        "node": ">= 20.19.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@noble/hashes",
+      "version": "2.4.0",
+      "integrity": "sha512-X5XaVWZIBCT7HHZGm5I7ZQXDwLG+bGXuSrMQAW+7Zvl87h1kmc1ZB1VSRJcpUfoUrGQp4Fkoxm5kZ+Ms+aW+eA==",
+      "scripts": {
+        "test": "node test/index.ts",
+        "build": "tsc",
+        "check": "jsbt-check",
+        "format": "prettier --write 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
+        "test:dos": "node test/slow-dos.test.ts",
+        "test:kdf": "node test/slow-kdf.test.ts",
+        "benchmark": "node benchmark/hashes.ts",
+        "test:acvp": "node test/slow-acvp.test.ts",
+        "test:slow": "node test/slow-big.test.ts",
+        "test:ultra": "node test/slow-ultra.test.ts",
+        "build:clean": "rm *.{js,d.ts} 2> /dev/null",
+        "benchmark:size": "bismar -bsm",
+        "test:ultra:scrypt": "node test/slow-extreme-scrypt.test.ts",
+        "benchmark:thirdparty": "cd benchmark/thirdparty; npm ci; JSBT_BENCHMARK_DIMENSIONS='algorithm,buffer,library' node hashes.ts",
+        "benchmark:thirdparty-scrypt": "cd benchmark/thirdparty; npm ci; JSBT_BENCHMARK_DIMENSIONS='iters,library' FILTER='async' node scrypt.ts"
+      },
+      "engines": {
+        "node": ">= 20.19.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@pdf-lib/standard-fonts",
+      "version": "1.0.0",
+      "integrity": "sha512-hU30BK9IUN/su0Mn9VdlVKsWBS6GyhVfqjwl1FjZN4TxP6cCw0jP2w7V3Hf5uX7M0AZJ16vey9yE0ny7Sa59ZA==",
+      "scripts": {
+        "make": "node Makefile.js",
+        "lint": "node Makefile.js lint",
+        "clean": "node Makefile.js clean",
+        "typecheck": "tsc --noEmit",
+        "afmToJson": "node Makefile.js afmToJson",
+        "encodingsToJson": "node Makefile.js encodingsToJson",
+        "releaseNext": "node Makefile.js releaseNext",
+        "releaseLatest": "node Makefile.js releaseLatest"
+      },
+      "engines": {},
+      "dependencies": {
+        "pako": "^1.0.6"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@pdf-lib/upng",
+      "version": "1.0.1",
+      "integrity": "sha512-dQK2FUMQtowVP00mtIksrlZhdFXQZPC+taih1q4CvPZ5vqdxR/LKBaFg0oAfzd1GlHZXXSPdQfzQnt+ViGvEIQ==",
+      "scripts": {
+        "build": "yarn build:cjs && yarn build:umd && yarn build:umd:min",
+        "build:cjs": "babel --plugins @babel/plugin-transform-modules-commonjs --out-dir cjs UPNG.js",
+        "build:umd": "rollup --config rollup.config.js --file dist/UPNG.js",
+        "build:umd:min": "rollup --config rollup.config.js --file dist/UPNG.min.js --environment MINIFY"
+      },
+      "engines": {},
+      "dependencies": {
+        "pako": "^1.0.10"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/adapter-libsql",
+      "version": "7.10.1",
+      "integrity": "sha512-82I6MvNPL+Vb9m9vSLIoi7V0R0QuTPKq/yJOWZSRHpmXhFww4krZ/XnECdpuUqs2fo7sXgC0YHheukN7wiFaWw==",
+      "scripts": {
+        "dev": "DEV=true tsx helpers/build.ts",
+        "test": "vitest run",
+        "build": "tsx helpers/build.ts"
+      },
+      "engines": {},
+      "dependencies": {
+        "async-mutex": "0.5.0",
+        "@libsql/client": "^0.17.0",
+        "@prisma/driver-adapter-utils": "7.10.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/client",
+      "version": "7.10.1",
+      "integrity": "sha512-5tgAbFGh//zVOC6WPNVgziOErJHYkUE+wmqCwbIyq6IrTXUYtv9y2iBFGh/Owo99Mx0+cr0j1FOrxkYBMuyhaQ==",
+      "scripts": {
+        "dev": "DEV=true tsx helpers/build.ts",
+        "test": "dotenv -e ../../.db.env -- jest --silent",
+        "build": "tsx helpers/build.ts",
+        "new-test": "tsx ./helpers/new-test/new-test.ts",
+        "test:e2e": "dotenv -e ../../.db.env -- tsx tests/e2e/_utils/run.ts",
+        "test-notypes": "dotenv -e ../../.db.env -- jest --testPathIgnorePatterns src/__tests__/types/types.test.ts",
+        "test:functional": "dotenv -e ../../.db.env -- tsx helpers/functional-test/run-tests.ts",
+        "test:functional:code": "dotenv -e ../../.db.env -- tsx helpers/functional-test/run-tests.ts --no-types",
+        "test:functional:types": "dotenv -e ../../.db.env -- tsx helpers/functional-test/run-tests.ts --types-only",
+        "test:functional:client": "pnpm run test:functional --client-runtime client"
+      },
+      "engines": {
+        "node": "^20.19 || ^22.12 || >=24.0"
+      },
+      "dependencies": {
+        "@prisma/client-runtime-utils": "7.10.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "prisma": "*",
+        "typescript": ">=5.4.0"
+      },
+      "peerDependenciesMeta": {
+        "prisma": {
+          "optional": true
+        },
+        "typescript": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "@prisma/client-runtime-utils",
+      "version": "7.10.1",
+      "integrity": "sha512-AzoATVIgmO3lcZfM443+9SI7+cyLMW2+Psw4op8WQHpHvHCX//CKxv8fwhiL0yGWF8DjdQrFewxrZo5McBdB8g==",
+      "scripts": {
+        "dev": "DEV=true tsx helpers/build.ts",
+        "test": "vitest run --passWithNoTests",
+        "build": "tsx helpers/build.ts"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/config",
+      "version": "7.10.1",
+      "integrity": "sha512-+0swF5ELUa3P/9cIR26+gpYjjCbGE0qvEBZhV4zMDkYsrtHjZ884MQbOnWFWXj600N0sSJNnHbtBqe12yDngWg==",
+      "scripts": {
+        "dev": "DEV=true tsx helpers/build.ts",
+        "test": "vitest run",
+        "build": "tsx helpers/build.ts"
+      },
+      "engines": {},
+      "dependencies": {
+        "c12": "3.3.4",
+        "effect": "3.20.0",
+        "empathic": "2.0.0",
+        "deepmerge-ts": "8.0.2"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/debug",
+      "version": "7.10.1",
+      "integrity": "sha512-eFCAkGZ13D/qPg48JBlG5IWi9cSBBOC7oG3abDPcAkYioDWlIjh0YJJLK2J7qo5S+xWWD8I6egAN/8KbCaiMCA==",
+      "scripts": {
+        "dev": "DEV=true tsx helpers/build.ts",
+        "test": "vitest run",
+        "build": "tsx helpers/build.ts"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/debug",
+      "version": "7.2.0",
+      "integrity": "sha512-YSGTiSlBAVJPzX4ONZmMotL+ozJwQjRmZweQNIq/ER0tQJKJynNkRB3kyvt37eOfsbMCXk3gnLF6J9OJ4QWftw==",
+      "scripts": {
+        "dev": "DEV=true tsx helpers/build.ts",
+        "test": "jest",
+        "build": "tsx helpers/build.ts"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/dev",
+      "version": "0.24.17",
+      "integrity": "sha512-UvdZzmpFwknnfreh6Jije84ekkYGPYEJhXG1tFzCsCfQyzJifrOo38eZc0qajzvaC6OLUOrN9ML5XfCnEZL9DA==",
+      "scripts": {
+        "dev": "node ./scripts/generate-bun-runtime-assets.mjs && tsup --watch",
+        "init": "node ./scripts/generate-bun-runtime-assets.mjs",
+        "lint": "eslint --fix .",
+        "test": "node ./scripts/generate-bun-runtime-assets.mjs && vitest run",
+        "build": "node ./scripts/generate-bun-runtime-assets.mjs && tsup && node ./scripts/generate-bun-runtime-assets.mjs --dist",
+        "test:e2e": "node ./scripts/generate-bun-runtime-assets.mjs && vitest run e2e.test",
+        "typecheck": "node ./scripts/generate-bun-runtime-assets.mjs && tsc --noEmit",
+        "check:exports": "attw . --pack --profile node16"
+      },
+      "engines": {},
+      "dependencies": {
+        "pathe": "2.0.3",
+        "remeda": "2.33.4",
+        "std-env": "3.10.0",
+        "valibot": "1.4.2",
+        "zeptomatch": "2.1.0",
+        "find-my-way": "9.7.0",
+        "get-port-please": "3.2.0",
+        "proper-lockfile": "4.1.2",
+        "foreground-child": "3.3.1",
+        "@electric-sql/pglite": "0.4.3",
+        "@prisma/get-platform": "7.2.0",
+        "@prisma/streams-local": "0.1.11",
+        "@electric-sql/pglite-tools": "0.3.3",
+        "@electric-sql/pglite-socket": "0.1.3",
+        "@prisma/query-plan-executor": "7.2.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/driver-adapter-utils",
+      "version": "7.10.1",
+      "integrity": "sha512-DJ4c6xvVnm3s9ZUyql9nCUicADSqyvH+CjXRCM9L6m5zJxCNmebCElG6X4irICq3rosBwlX+S19Dxq/4IrZk3A==",
+      "scripts": {
+        "dev": "DEV=true tsx helpers/build.ts",
+        "build": "tsx helpers/build.ts"
+      },
+      "engines": {},
+      "dependencies": {
+        "@prisma/debug": "7.10.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/engines",
+      "version": "7.10.1",
+      "integrity": "sha512-R6/ghv1Bu36FhCdQLFof1pNtyoWoeDzJLYeTKjgqb4eGtOAJx7ZqJtcm4pzkahLfZ9rYz8AkmsMDwkyiYbXPCQ==",
+      "scripts": {
+        "dev": "DEV=true tsx helpers/build.ts",
+        "test": "vitest run",
+        "build": "tsx helpers/build.ts",
+        "postinstall": "node scripts/postinstall.js"
+      },
+      "engines": {},
+      "dependencies": {
+        "@prisma/debug": "7.10.1",
+        "@prisma/fetch-engine": "7.10.1",
+        "@prisma/get-platform": "7.10.1",
+        "@prisma/engines-version": "8.1.0-1.d1b3f377ca835d73fd50954a5e22128b9ebdd6b8"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/engines-version",
+      "version": "8.1.0-1.d1b3f377ca835d73fd50954a5e22128b9ebdd6b8",
+      "integrity": "sha512-XjXmwjN2NE340RpXoXv8ZF8aNAvr0FE+7gNfkKeW6vyjXs7F8uxvEbWQoVrhioXDQoIsnNmv7r+wxvzfdEZaWA==",
+      "scripts": {
+        "build": "tsc -d"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/fetch-engine",
+      "version": "7.10.1",
+      "integrity": "sha512-qZezeaExLWG2ptbHOrMxdiWluKHgqEclTdJbvY6pk6+Wg7EiVkeq5U3cXz9ti8nd0bngNvsDgledLHVRg5LF1w==",
+      "scripts": {
+        "dev": "DEV=true tsx helpers/build.ts",
+        "test": "vitest run",
+        "build": "tsx helpers/build.ts"
+      },
+      "engines": {},
+      "dependencies": {
+        "@prisma/debug": "7.10.1",
+        "@prisma/get-platform": "7.10.1",
+        "@prisma/engines-version": "8.1.0-1.d1b3f377ca835d73fd50954a5e22128b9ebdd6b8"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/get-platform",
+      "version": "7.2.0",
+      "integrity": "sha512-k1V0l0Td1732EHpAfi2eySTezyllok9dXb6UQanajkJQzPUGi3vO2z7jdkz67SypFTdmbnyGYxvEvYZdZsMAVA==",
+      "scripts": {
+        "dev": "DEV=true tsx helpers/build.ts",
+        "test": "jest",
+        "build": "tsx helpers/build.ts"
+      },
+      "engines": {},
+      "dependencies": {
+        "@prisma/debug": "7.2.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/get-platform",
+      "version": "7.10.1",
+      "integrity": "sha512-iVnghHne5vcaobBjPVCMEjh5r/1UCj394EIGTUclasFRatpR/MQwcM2veLv5kgoFSyYP54nch/lNFCQRYcDxvg==",
+      "scripts": {
+        "dev": "DEV=true tsx helpers/build.ts",
+        "test": "vitest run",
+        "build": "tsx helpers/build.ts"
+      },
+      "engines": {},
+      "dependencies": {
+        "@prisma/debug": "7.10.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/query-plan-executor",
+      "version": "7.2.0",
+      "integrity": "sha512-EOZmNzcV8uJ0mae3DhTsiHgoNCuu1J9mULQpGCh62zN3PxPTd+qI9tJvk5jOst8WHKQNwJWR3b39t0XvfBB0WQ==",
+      "scripts": {
+        "dev": "DEV=true tsx helpers/build.ts",
+        "test": "vitest run",
+        "build": "tsx helpers/build.ts"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/streams-local",
+      "version": "0.1.11",
+      "integrity": "sha512-0TcebL559MByKqTJ+SsrFIEg228iw8UCVRFckzgfRSiJqczhs+MuAgWOF9lnOIV/IVqvu+KMnFTH0eDeTQMpUg==",
+      "scripts": {},
+      "engines": {
+        "bun": ">=1.2.0",
+        "node": ">=22.0.0"
+      },
+      "dependencies": {
+        "ajv": "^8.12.0",
+        "better-result": "^2.7.0",
+        "env-paths": "^3.0.0",
+        "proper-lockfile": "^4.1.2"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@prisma/studio-core",
+      "version": "0.33.0",
+      "integrity": "sha512-V2fX/nKEymNTrHXwfP26PGjoLStO35Ogu+ex7CFJbLrMYEcZxxZpiSNOs7px23Hk5mzLWvM5RsqG6Ka+rha+wg==",
+      "scripts": {
+        "dev": "NODE_OPTIONS=--max-old-space-size=8192 tsup --watch",
+        "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
+        "test": "vitest --passWithNoTests",
+        "build": "NODE_OPTIONS=--max-old-space-size=8192 tsup",
+        "test:ui": "vitest --passWithNoTests --project ui",
+        "demo:ppg": "bun demo/ppg-dev/server.ts",
+        "lint:fix": "eslint --fix --cache --cache-location ./node_modules/.cache/eslint .",
+        "test:e2e": "vitest --passWithNoTests --project e2e",
+        "changeset": "changeset",
+        "test:data": "vitest --project data",
+        "test:demo": "vitest --project demo",
+        "typecheck": "tsc --noEmit",
+        "build:deploy": "rm -rf deploy && bun demo/ppg-dev/build-compute.ts deploy",
+        "check:exports": "node scripts/release/check-exports.mjs",
+        "demo:ppg:build": "rm -rf demo/ppg-dev/bundle && bun build demo/ppg-dev/server.ts --target bun --outdir demo/ppg-dev/bundle",
+        "prepublishOnly": "pnpm build && pnpm check:exports",
+        "demo:ppg:bundle": "pnpm demo:ppg:build && bun demo/ppg-dev/bundle/server.js",
+        "release:prepare": "node scripts/release/prepare-release.mjs",
+        "streams:use-npm": "node scripts/dev/install-npm-streams.mjs",
+        "test:checkpoint": "vitest --project checkpoint",
+        "test:data:mysql": "STUDIO_MYSQL_TEST_URL=${STUDIO_MYSQL_TEST_URL:-mysql://root@localhost:15306/studio} vitest --project data data/mysql-core/adapter.test.ts data/mysql-core/dml.test.ts data/mysql-core/introspection.test.ts",
+        "version-packages": "changeset version && pnpm install --lockfile-only",
+        "streams:use-local": "node scripts/dev/install-local-streams.mjs",
+        "demo:ppg:seed-scale": "bun demo/ppg-dev/seed-streams-scale.ts"
+      },
+      "engines": {
+        "node": "^20.19 || ^22.12 || >=24.0",
+        "pnpm": "8"
+      },
+      "dependencies": {
+        "elkjs": "0.11.1",
+        "d3-array": "3.2.4",
+        "d3-shape": "3.2.0",
+        "@visx/grid": "4.0.1-alpha.0",
+        "@visx/curve": "4.0.1-alpha.0",
+        "@visx/event": "4.0.1-alpha.0",
+        "@visx/group": "4.0.1-alpha.0",
+        "@visx/scale": "4.0.1-alpha.0",
+        "@visx/shape": "4.0.1-alpha.0",
+        "@visx/responsive": "4.0.1-alpha.0",
+        "@radix-ui/react-toggle": "1.1.10"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "react": "^18.0.0 || ^19.0.0",
+        "react-dom": "^18.0.0 || ^19.0.0",
+        "@types/react": "^18.0.0 || ^19.0.0"
+      },
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@radix-ui/primitive",
+      "version": "1.1.3",
+      "integrity": "sha512-JTF99U/6XIjCBo0wqkU5sK10glYe27MRRsfwoiq5zzOEZLHU3A3KCMa5X/azekYRCJ0HlwI0crAXS/5dEHTzDg==",
+      "scripts": {
+        "lint": "eslint --max-warnings 0 src",
+        "build": "radix-build",
+        "clean": "rm -rf dist",
+        "typecheck": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@radix-ui/react-compose-refs",
+      "version": "1.1.2",
+      "integrity": "sha512-z4eqJvfiNnFMHIIvXP3CY57y2WJs5g2v3X0zm9mEJkrkNv4rDxu+sg9Jh8EkXyeqBkB7SOcboo9dMVqhyrACIg==",
+      "scripts": {
+        "lint": "eslint --max-warnings 0 src",
+        "clean": "rm -rf dist",
+        "version": "yarn version"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+        "@types/react": "*"
+      },
+      "peerDependenciesMeta": {
+        "@types/react": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "@radix-ui/react-primitive",
+      "version": "2.1.3",
+      "integrity": "sha512-m9gTwRkhy2lvCPe6QJp4d3G1TYEUHn/FzJUtq9MjH46an1wJU+GdoGC5VLof8RX8Ft/DlpshApkhswDLZzHIcQ==",
+      "scripts": {
+        "lint": "eslint --max-warnings 0 src",
+        "build": "radix-build",
+        "clean": "rm -rf dist",
+        "typecheck": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {
+        "@radix-ui/react-slot": "1.2.3"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+        "@types/react": "*",
+        "@types/react-dom": "*"
+      },
+      "peerDependenciesMeta": {
+        "@types/react": {
+          "optional": true
+        },
+        "@types/react-dom": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "@radix-ui/react-slot",
+      "version": "1.2.3",
+      "integrity": "sha512-aeNmHnBxbi2St0au6VBVC7JXFlhLlOnvIIlePNniyUNAClzmtAUEY8/pBiK3iHjufOlwA+c20/8jngo7xcrg8A==",
+      "scripts": {
+        "lint": "eslint --max-warnings 0 src",
+        "build": "radix-build",
+        "clean": "rm -rf dist",
+        "typecheck": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {
+        "@radix-ui/react-compose-refs": "1.1.2"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+        "@types/react": "*"
+      },
+      "peerDependenciesMeta": {
+        "@types/react": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "@radix-ui/react-toggle",
+      "version": "1.1.10",
+      "integrity": "sha512-lS1odchhFTeZv3xwHH31YPObmJn8gOg7Lq12inrr0+BH/l3Tsq32VfjqH1oh80ARM3mlkfMic15n0kg4sD1poQ==",
+      "scripts": {
+        "lint": "eslint --max-warnings 0 src",
+        "build": "radix-build",
+        "clean": "rm -rf dist",
+        "typecheck": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {
+        "@radix-ui/primitive": "1.1.3",
+        "@radix-ui/react-primitive": "2.1.3",
+        "@radix-ui/react-use-controllable-state": "1.2.2"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+        "@types/react": "*",
+        "@types/react-dom": "*"
+      },
+      "peerDependenciesMeta": {
+        "@types/react": {
+          "optional": true
+        },
+        "@types/react-dom": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "@radix-ui/react-use-controllable-state",
+      "version": "1.2.2",
+      "integrity": "sha512-BjasUjixPFdS+NKkypcyyN5Pmg83Olst0+c6vGov0diwTEo6mgdqVR6hxcEgFuh4QrAs7Rc+9KuGJ9TVCj0Zzg==",
+      "scripts": {
+        "lint": "eslint --max-warnings 0 src",
+        "build": "radix-build",
+        "clean": "rm -rf dist",
+        "typecheck": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {
+        "@radix-ui/react-use-effect-event": "0.0.2",
+        "@radix-ui/react-use-layout-effect": "1.1.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+        "@types/react": "*"
+      },
+      "peerDependenciesMeta": {
+        "@types/react": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "@radix-ui/react-use-effect-event",
+      "version": "0.0.2",
+      "integrity": "sha512-Qp8WbZOBe+blgpuUT+lw2xheLP8q0oatc9UpmiemEICxGvFLYmHm9QowVZGHtJlGbS6A6yJ3iViad/2cVjnOiA==",
+      "scripts": {
+        "lint": "eslint --max-warnings 0 src",
+        "build": "radix-build",
+        "clean": "rm -rf dist",
+        "typecheck": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {
+        "@radix-ui/react-use-layout-effect": "1.1.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+        "@types/react": "*"
+      },
+      "peerDependenciesMeta": {
+        "@types/react": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "@radix-ui/react-use-layout-effect",
+      "version": "1.1.1",
+      "integrity": "sha512-RbJRS4UWQFkzHTTwVymMTUv8EqYhOp8dOOviLj2ugtTiXRaRQS7GLGxZTLL1jWhMeoSCf5zmcZkqTl9IiYfXcQ==",
+      "scripts": {
+        "lint": "eslint --max-warnings 0 src",
+        "clean": "rm -rf dist",
+        "version": "yarn version"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+        "@types/react": "*"
+      },
+      "peerDependenciesMeta": {
+        "@types/react": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "@standard-schema/spec",
+      "version": "1.1.0",
+      "integrity": "sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==",
+      "scripts": {
+        "lint": "pnpm biome lint ./src",
+        "format": "pnpm biome format --write ./src",
+        "check": "pnpm biome check ./src",
+        "build": "tsup"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/busboy",
+      "version": "1.5.5",
+      "integrity": "sha512-IwqrfVFxWa23c4WeE7uZswssCqGfvnl5Q7b1pdshbT3HaQDa3UIbJx5BAxtcj9nZYX9tVDArM9TUv9SpvORbpQ==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "@types/node": "*"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/d3-array",
+      "version": "3.0.3",
+      "integrity": "sha512-Reoy+pKnvsksN0lQUlcH6dOGjRZ/3WRwXR//m+/8lt1BXeI4xyaUZoqULNjyXXRuh0Mj4LNpkCvhUpQlY3X5xQ==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/d3-color",
+      "version": "3.1.0",
+      "integrity": "sha512-HKuicPHJuvPgCD+np6Se9MQvS6OCbJmOjGvylzMJRlDwUXjKTTXs6Pwgk79O09Vj/ho3u1ofXnhFOaEWWPrlwA==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/d3-color",
+      "version": "3.1.3",
+      "integrity": "sha512-iO90scth9WAbmgv7ogoq57O9YpKmFBbmoEoCHDB2xMBY0+/KVrqAaCDyCE16dUspeOvIxFFRI+0sEtqDqy2b4A==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/d3-delaunay",
+      "version": "6.0.1",
+      "integrity": "sha512-tLxQ2sfT0p6sxdG75c6f/ekqxjyYR0+LwPrsO1mbC9YDBzPJhs2HbJJRrn8Ez1DBoHRo2yx7YEATI+8V1nGMnQ==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/d3-format",
+      "version": "3.0.1",
+      "integrity": "sha512-5KY70ifCCzorkLuIkDe0Z9YTf9RR2CjBX1iaJG+rgM/cPP+sO+q9YdQ9WdhQcgPj1EQiJ2/0+yUkkziTG6Lubg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/d3-geo",
+      "version": "3.1.0",
+      "integrity": "sha512-856sckF0oP/diXtS4jNsiQw/UuK5fQG8l/a9VVLeSouf1/PPbBE1i1W852zVwKwYCBkFJJB7nCFTbk6UMEXBOQ==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "@types/geojson": "*"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/d3-interpolate",
+      "version": "3.0.1",
+      "integrity": "sha512-jx5leotSeac3jr0RePOH1KdR9rISG91QIE4Q2PYTu4OymLTZfA3SrnURSLzKH48HmXVUru50b8nje4E79oQSQw==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "@types/d3-color": "*"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/d3-path",
+      "version": "3.1.1",
+      "integrity": "sha512-VMZBYyQvbGmWyWVea0EHs/BwLgxc+MKi1zLDCONksozI4YJMcTt8ZEuIR4Sb1MMTE8MMW49v0IwI5+b7RmfWlg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/d3-scale",
+      "version": "4.0.2",
+      "integrity": "sha512-Yk4htunhPAwN0XGlIwArRomOjdoBFXC3+kCxK2Ubg7I9shQlVSJy/pG/Ht5ASN+gdMIalpk8TJ5xV74jFsetLA==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "@types/d3-time": "*"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/d3-shape",
+      "version": "3.1.7",
+      "integrity": "sha512-VLvUQ33C+3J+8p+Daf+nYSOsjB4GXp19/S/aGo60m9h1v6XaxjiT82lKVWJCfzhtuZ3yD7i/TPeC/fuKLLOSmg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "@types/d3-path": "*"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/d3-time",
+      "version": "3.0.0",
+      "integrity": "sha512-sZLCdHvBUcNby1cB6Fd3ZBrABbjz3v1Vm90nysCQ6Vt7vd6e/h9Lt7SiJUoEX0l4Dzc7P5llKyhqSi1ycSf1Hg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/d3-time",
+      "version": "3.0.4",
+      "integrity": "sha512-yuzZug1nkAAaBlBBikKZTgzCeA+k1uy4ZFwWANOfKw5z5LRhV0gNA7gNkKm7HoK+HRN0wX3EkxGk0fpbWhmB7g==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/d3-time-format",
+      "version": "2.1.0",
+      "integrity": "sha512-/myT3I7EwlukNOX2xVdMzb8FRgNzRMpsZddwst9Ld/VFe6LyJyRp0s32l/V9XoUzk+Gqu56F/oGk6507+8BxrA==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/geojson",
+      "version": "7946.0.16",
+      "integrity": "sha512-6C8nqWur3j98U6+lXDfTUWIfgvZU+EumvpHKcYjujKH7woYyLj2sUmff0tRhrqM7BohUw7Pz3ZB1jj2gW9Fvmg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/lodash",
+      "version": "4.17.27",
+      "integrity": "sha512-VenMRv/eKNrspX9v3H4dbmjsrnCOYdYBG3kxXKk3dG6X+urBGcj2Prww3xw1U5K4FV/mE4h5GbWd0szEKf+9ew==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/node",
+      "version": "26.6.5",
+      "integrity": "sha512-uMzsv9stDdofIZBx4UGh4Z9ZgXnGC9seRDscilBcTHAeOFk67MZg/k9bWVfO+bk4qZmG+l52hRnLwUiH2LnJTg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "undici-types": "~8.9.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/react",
+      "version": "19.3.0",
+      "integrity": "sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "csstype": "^3.2.2"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@types/ws",
+      "version": "8.18.2",
+      "integrity": "sha512-67MQl+fpWKVTT1NYdnmo3U4sc/xPo/zQBncVnI74qmQa0z/b+1g6iYqNmGCPbxO+zz2aklb08a0oHfegiVd0/w==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "@types/node": "*"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@visx/curve",
+      "version": "4.0.1-alpha.0",
+      "integrity": "sha512-jRu61Uz274pV1zyioXmboyrLutYbnKsgjj4njSGCnhdXj5GkZvZbg+ThDb6oOzoAnJOBRLz4rzPlWvNJOzuVMg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "@visx/vendor": "4.0.0-alpha.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@visx/event",
+      "version": "4.0.1-alpha.0",
+      "integrity": "sha512-EQqCMSv/s8NbFjo+hz3FKsvvYfP+2QslsFJ/24/O5l/W+7UC6J6aAvO0ujVwrTwdYbuQ+vhxKi1xdPdKR/qj1g==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "@visx/point": "4.0.1-alpha.0",
+        "@types/react": "*"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@visx/grid",
+      "version": "4.0.1-alpha.0",
+      "integrity": "sha512-rycutGmTHO+znNdPumheWMglm7YfpffvRwUkVy5zy4WoORIuKTMkDxwnOzHG2xMxU3EE/YCd37xFV5AxA30yeg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "classnames": "^2.3.1",
+        "@visx/curve": "4.0.1-alpha.0",
+        "@visx/group": "4.0.1-alpha.0",
+        "@visx/point": "4.0.1-alpha.0",
+        "@visx/scale": "4.0.1-alpha.0",
+        "@visx/shape": "4.0.1-alpha.0",
+        "@types/react": "*"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "react": "^16.14.0 || ^17.0.0-0 || ^18.0.0-0 || ^19.0.0-0"
+      },
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@visx/group",
+      "version": "4.0.1-alpha.0",
+      "integrity": "sha512-V19l7iQ7jccBv8kao/EByuI6o4xtxzzLV9nqVI1hRvmdzTVsuLpqlwzYCZUXJaTVvUWf8s4D2SQFjGkj/Nw+0w==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "classnames": "^2.3.1",
+        "@types/react": "*"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "react": "^16.14.0 || ^17.0.0-0 || ^18.0.0-0 || ^19.0.0-0"
+      },
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@visx/point",
+      "version": "4.0.1-alpha.0",
+      "integrity": "sha512-ijTfr/Nx09f03vIj9nyTr3z4Xth4Y75427UaogJh6dnIRLMEFHQOwNu791sbfiNj0a+ZXuaE32h0vKrFe4/8Qg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@visx/responsive",
+      "version": "4.0.1-alpha.0",
+      "integrity": "sha512-o+1zGywQZY0+yOx3Iw87wc4bbPJRr/HnIukTwfOz4UVyj9pB1OQNVHB7OORO1+LBHJceWpB31co/ZV9KHncKrA==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "lodash": "^4.17.21",
+        "@types/react": "*",
+        "@types/lodash": "^4.17.13"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "react": "^16.14.0 || ^17.0.0-0 || ^18.0.0-0 || ^19.0.0-0"
+      },
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@visx/scale",
+      "version": "4.0.1-alpha.0",
+      "integrity": "sha512-nzjeE87vFSAXGWFiiNfBpNLAf0Q8Qmf6syvKLjqNi4kGZkdhbUll3E/59YsgWXmjM8+llPLWzGsP+JPvo5eq1A==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "@visx/vendor": "4.0.0-alpha.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@visx/shape",
+      "version": "4.0.1-alpha.0",
+      "integrity": "sha512-62QeiVNmPlterQGwhkEDcbq7M0MqY0lBsK5QKXtM9ZoPZWkuGV3aykA3+Xu20B2FAvyJq4LqJzBc7Sxr+EAdbA==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "lodash": "^4.17.21",
+        "classnames": "^2.3.1",
+        "@visx/curve": "4.0.1-alpha.0",
+        "@visx/group": "4.0.1-alpha.0",
+        "@visx/scale": "4.0.1-alpha.0",
+        "@types/react": "*",
+        "@visx/vendor": "4.0.0-alpha.0",
+        "@types/lodash": "^4.17.13"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "react": "^16.14.0 || ^17.0.0-0 || ^18.0.0-0 || ^19.0.0-0"
+      },
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "@visx/vendor",
+      "version": "4.0.0-alpha.0",
+      "integrity": "sha512-6I+MuqXBcv9jnlcVowHoHKSdk9gXTWkHLKyqBwRWg7LY6A3Ei8SHfubpqGV5rBUSppxMq2RszPJUS6w+H0YgmQ==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "d3-geo": "3.1.0",
+        "d3-path": "3.1.0",
+        "d3-time": "3.1.0",
+        "d3-array": "3.2.1",
+        "d3-color": "3.1.0",
+        "d3-scale": "4.0.2",
+        "d3-shape": "3.2.0",
+        "d3-format": "3.1.0",
+        "internmap": "2.0.3",
+        "d3-delaunay": "6.0.2",
+        "@types/d3-geo": "3.1.0",
+        "@types/d3-path": "3.1.1",
+        "@types/d3-time": "3.0.0",
+        "d3-interpolate": "3.0.1",
+        "d3-time-format": "4.1.0",
+        "@types/d3-array": "3.0.3",
+        "@types/d3-color": "3.1.0",
+        "@types/d3-scale": "4.0.2",
+        "@types/d3-shape": "3.1.7",
+        "@types/d3-format": "3.0.1",
+        "@types/d3-delaunay": "6.0.1",
+        "@types/d3-interpolate": "3.0.1",
+        "@types/d3-time-format": "2.1.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "ajv",
+      "version": "8.20.0",
+      "integrity": "sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==",
+      "scripts": {
+        "eslint": "eslint \"lib/**/*.ts\" \"spec/**/*.*s\" --ignore-pattern spec/JSON-Schema-Test-Suite",
+        "prettier:write": "prettier --write \"./**/*.{json,yaml,js,ts}\"",
+        "prettier:check": "prettier --list-different \"./**/*.{json,yaml,js,ts}\"",
+        "test-spec": "cross-env TS_NODE_PROJECT=spec/tsconfig.json mocha -r ts-node/register \"spec/**/*.spec.{ts,js}\" -R dot",
+        "test-codegen": "nyc cross-env TS_NODE_PROJECT=spec/tsconfig.json mocha -r ts-node/register 'spec/codegen.spec.ts' -R spec",
+        "test-debug": "npm run test-spec -- --inspect-brk",
+        "test-cov": "nyc npm run test-spec",
+        "rollup": "rm -rf bundle && rollup -c",
+        "bundle": "rm -rf bundle && node ./scripts/bundle.js ajv ajv7 ajv7 && node ./scripts/bundle.js 2019 ajv2019 ajv2019 && node ./scripts/bundle.js 2020 ajv2020 ajv2020 && node ./scripts/bundle.js jtd ajvJTD ajvJTD",
+        "build": "rm -rf dist && tsc && cp -r lib/refs dist && rm dist/refs/json-schema-2019-09/index.ts && rm dist/refs/json-schema-2020-12/index.ts && rm dist/refs/jtd-schema.ts",
+        "json-tests": "rm -rf spec/_json/*.js && node scripts/jsontests",
+        "test-karma": "karma start",
+        "test-browser": "rm -rf .browser && npm run bundle && scripts/prepare-tests && karma start",
+        "test-all": "npm run test-cov",
+        "test": "npm run json-tests && npm run prettier:check && npm run eslint && npm link && npm link --legacy-peer-deps ajv && npm run test-cov",
+        "test-ci": "AJV_FULL_TEST=true npm test",
+        "prepublish": "npm run build",
+        "benchmark": "npm i && npm run build && npm link && cd ./benchmark && npm link --legacy-peer-deps ajv && npm i && node ./jtd",
+        "docs:dev": "./scripts/prepare-site && vuepress dev docs",
+        "docs:build": "./scripts/prepare-site && vuepress build docs"
+      },
+      "engines": {},
+      "dependencies": {
+        "fast-deep-equal": "^3.1.3",
+        "fast-uri": "^3.0.1",
+        "json-schema-traverse": "^1.0.0",
+        "require-from-string": "^2.0.2"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "async-mutex",
+      "version": "0.5.0",
+      "integrity": "sha512-1A94B18jkJ3DYq284ohPxoXbfTA5HsQ7/Mf4DEhcyLx3Bz27Rh59iScbB6EPiP+B+joue6YCxcMXSbFC1tZKwA==",
+      "scripts": {
+        "lint": "eslint src/**/*.ts test/**/*.ts",
+        "build": "tsc && tsc -p tsconfig.es6.json && tsc -p tsconfig.mjs.json && rollup -o index.mjs mjs/index.js",
+        "prepublishOnly": "yarn test && yarn build",
+        "test": "yarn lint && nyc --reporter=text --reporter=html --reporter=lcov mocha test/*.ts",
+        "coveralls": "cat ./coverage/lcov.info | coveralls"
+      },
+      "engines": {},
+      "dependencies": {
+        "tslib": "^2.4.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "aws-ssl-profiles",
+      "version": "1.1.2",
+      "integrity": "sha512-NZKeq9AfyQvEeNlN0zSYAaWrmBffJh3IELMZfRpJVWgrpEbtEpnjvzqBPf+mxoI287JohRDoa+/nsfqqiZmF6g==",
+      "scripts": {
+        "build": "npx tsc",
+        "postbuild": "cp src/index.d.ts lib/index.d.ts",
+        "lint": "npx @biomejs/biome lint && prettier --check .",
+        "lint:fix": "npx @biomejs/biome lint --write . && prettier --write .",
+        "pretest": "npm run build",
+        "test": "poku --parallel ./test",
+        "test:ci": "npm run lint && npm run test"
+      },
+      "engines": {
+        "node": ">= 6.0.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "better-auth",
+      "version": "1.7.14",
+      "integrity": "sha512-QxDCI0pOCCHDYmruisKhKyrvOJ6Icv9xg0RA6ZUysfKFXENYwhNNpwUlkE/NmViH2nDMgkKcymmLr55pnpR9vw==",
+      "scripts": {
+        "dev": "tsdown --watch",
+        "test": "vitest",
+        "build": "tsdown",
+        "coverage": "vitest run --coverage --coverage.provider=istanbul",
+        "typecheck": "tsc --project tsconfig.json",
+        "lint:types": "attw --profile esm-only --pack .",
+        "lint:package": "publint run --strict --pack false",
+        "test:adapters": "vitest run --config vitest.config.adapters.ts"
+      },
+      "engines": {},
+      "dependencies": {
+        "zod": "^4.5.4",
+        "defu": "^6.1.4",
+        "jose": "^6.2.3",
+        "kysely": "^0.28.17 || ^0.29.0",
+        "nanostores": "^1.3.0",
+        "better-call": "1.4.4",
+        "@noble/hashes": "^2.2.0",
+        "@noble/ciphers": "^2.2.0",
+        "@better-auth/core": "1.7.14",
+        "@better-auth/utils": "0.5.1",
+        "@better-fetch/fetch": "1.3.3",
+        "@better-auth/telemetry": "1.7.14",
+        "@better-auth/mongo-adapter": "1.7.14",
+        "@better-auth/kysely-adapter": "1.7.14",
+        "@better-auth/memory-adapter": "1.7.14",
+        "@better-auth/prisma-adapter": "1.7.14",
+        "@better-auth/drizzle-adapter": "1.7.14"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "pg": "^8.0.0",
+        "vue": "^3.0.0",
+        "next": "^14.0.0 || ^15.0.0 || ^16.0.0",
+        "react": "^18.0.0 || ^19.0.0",
+        "mysql2": "^3.0.0",
+        "prisma": "^5.0.0 || ^6.0.0 || ^7.0.0",
+        "svelte": "^4.0.0 || ^5.0.0",
+        "vitest": "^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0",
+        "mongodb": "^6.0.0 || ^7.0.0",
+        "solid-js": "^1.0.0",
+        "react-dom": "^18.0.0 || ^19.0.0",
+        "drizzle-kit": ">=0.31.4 || >=1.0.0-beta.1",
+        "drizzle-orm": "^0.45.2 || >=1.0.0-rc.1 <2.0.0",
+        "@sveltejs/kit": "^2.0.0 || ^3.0.0",
+        "@lynx-js/react": "*",
+        "@prisma/client": "^5.0.0 || ^6.0.0 || ^7.0.0",
+        "@tanstack/react-start": "^1.0.0",
+        "@tanstack/solid-start": "^1.0.0"
+      },
+      "peerDependenciesMeta": {
+        "pg": {
+          "optional": true
+        },
+        "vue": {
+          "optional": true
+        },
+        "next": {
+          "optional": true
+        },
+        "react": {
+          "optional": true
+        },
+        "mysql2": {
+          "optional": true
+        },
+        "prisma": {
+          "optional": true
+        },
+        "svelte": {
+          "optional": true
+        },
+        "vitest": {
+          "optional": true
+        },
+        "mongodb": {
+          "optional": true
+        },
+        "solid-js": {
+          "optional": true
+        },
+        "react-dom": {
+          "optional": true
+        },
+        "drizzle-kit": {
+          "optional": true
+        },
+        "drizzle-orm": {
+          "optional": true
+        },
+        "@sveltejs/kit": {
+          "optional": true
+        },
+        "@lynx-js/react": {
+          "optional": true
+        },
+        "@prisma/client": {
+          "optional": true
+        },
+        "@tanstack/react-start": {
+          "optional": true
+        },
+        "@tanstack/solid-start": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "better-call",
+      "version": "1.4.4",
+      "integrity": "sha512-Gq4XdGFy4dmUxFEAX2nj0ycFcFbD9ZWh8YROouZoyXeF1M11TpYbplk0pDByTFF8Wz+MYa6W9052c9m7dD+mfw==",
+      "scripts": {
+        "dev": "tsdown --watch",
+        "test": "vitest",
+        "build": "tsdown",
+        "coverage": "vitest run --coverage",
+        "lint:type": "attw --profile node16 --pack .",
+        "lint:package": "publint --strict .",
+        "coverage:open": "open coverage/index.html"
+      },
+      "engines": {},
+      "dependencies": {
+        "rou3": "^0.9.1",
+        "set-cookie-parser": "^3.1.2",
+        "@better-auth/utils": "^0.5.0",
+        "@better-fetch/fetch": "^1.3.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "zod": "^4.0.0"
+      },
+      "peerDependenciesMeta": {
+        "zod": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "better-result",
+      "version": "2.10.0",
+      "integrity": "sha512-oQhh0y1qo2/ZKdAAEvHZAqKKiHOFU5k/bW96fE2ScgQOVkJRiHwB+nOS1SgFsYqRlxMDWvefXi9Q3px7QvgNDw==",
+      "scripts": {
+        "fmt": "oxfmt .",
+        "lint": "oxlint .",
+        "test": "vitest --typecheck --run",
+        "build": "tsdown",
+        "check": "tsc --noEmit",
+        "fmt:check": "oxfmt --check .",
+        "prepublishOnly": "bun run build"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "busboy",
+      "version": "1.6.0",
+      "integrity": "sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==",
+      "scripts": {
+        "lint": "eslint --cache --report-unused-disable-directives --ext=.js .eslintrc.js lib test bench",
+        "test": "node test/test.js",
+        "lint:fix": "npm run lint -- --fix"
+      },
+      "engines": {
+        "node": ">=10.16.0"
+      },
+      "dependencies": {
+        "streamsearch": "^1.1.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "c12",
+      "version": "3.3.4",
+      "integrity": "sha512-cM0ApFQSBXuourJejzwv/AuPRvAxordTyParRVcHjjtXirtkzM0uK2L9TTn9s0cXZbG7E55jCivRQzoxYmRAlA==",
+      "scripts": {
+        "dev": "vitest dev",
+        "lint": "eslint . && prettier -c src test",
+        "test": "pnpm lint && vitest run --coverage && pnpm test:types",
+        "build": "obuild",
+        "prepack": "obuild",
+        "release": "pnpm build && pnpm test && changelogen --release --push --publish --publishTag 3x",
+        "lint:fix": "automd && eslint . --fix && prettier -w src test",
+        "test:types": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {
+        "rc9": "^3.0.1",
+        "defu": "^6.1.6",
+        "jiti": "^2.6.1",
+        "giget": "^3.2.0",
+        "ohash": "^2.0.11",
+        "pathe": "^2.0.3",
+        "dotenv": "^17.3.1",
+        "confbox": "^0.2.4",
+        "exsolve": "^1.0.8",
+        "chokidar": "^5.0.0",
+        "pkg-types": "^2.3.0",
+        "perfect-debounce": "^2.1.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "magicast": "*"
+      },
+      "peerDependenciesMeta": {
+        "magicast": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "chokidar",
+      "version": "5.0.0",
+      "integrity": "sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==",
+      "scripts": {
+        "lint": "prettier --check src",
+        "test": "node index.test.js",
+        "build": "tsc",
+        "format": "prettier --write src",
+        "test:bun1": "bun index.test.js"
+      },
+      "engines": {
+        "node": ">= 20.19.0"
+      },
+      "dependencies": {
+        "readdirp": "^5.0.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "classnames",
+      "version": "2.5.1",
+      "integrity": "sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==",
+      "scripts": {
+        "test": "node --test ./tests/*.mjs",
+        "bench": "node ./benchmarks/run.js",
+        "check-types": "tsd",
+        "bench-browser": "rollup --plugin commonjs,json,node-resolve ./benchmarks/runInBrowser.js --file ./benchmarks/runInBrowser.bundle.js && http-server -c-1 ./benchmarks"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "confbox",
+      "version": "0.2.4",
+      "integrity": "sha512-ysOGlgTFbN2/Y6Cg3Iye8YKulHw+R2fNXHrgSmXISQdMnomY6eNDprVdW9R5xBguEqI954+S6709UyiO7B+6OQ==",
+      "scripts": {
+        "dev": "vitest dev --coverage",
+        "lint": "oxlint && oxfmt --check src test",
+        "test": "pnpm lint && pnpm test:types && vitest run --coverage",
+        "bench": "pnpm build && node test/bench.mjs",
+        "build": "obuild",
+        "prepack": "pnpm build",
+        "release": "pnpm test && pnpm build && changelogen --release && npm publish && git push --follow-tags",
+        "lint:fix": "oxlint --fix && oxfmt src test",
+        "test:types": "tsgo --noEmit --skipLibCheck"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "confbox",
+      "version": "0.3.1",
+      "integrity": "sha512-cKUSoKa8YxFZZSmraVi7onONx3amu77ngK3kGpsYHDH7drPwCRkQE1RYMPlLRrMtnciRj274XNRxcHxnKmDSnA==",
+      "scripts": {
+        "dev": "vitest dev --coverage",
+        "lint": "oxlint && oxfmt --check src test",
+        "test": "pnpm lint && pnpm test:types && vitest run --coverage",
+        "bench": "pnpm build && node test/bench.mjs",
+        "build": "obuild",
+        "release": "pnpm test && pnpm build && changelogen --release && pnpm publish && git push --follow-tags",
+        "lint:fix": "oxlint --fix && oxfmt src test",
+        "test:types": "tsc --noEmit --skipLibCheck"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "cross-spawn",
+      "version": "7.0.6",
+      "integrity": "sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==",
+      "scripts": {
+        "lint": "eslint .",
+        "test": "jest --env node --coverage",
+        "release": "standard-version",
+        "prerelease": "npm t && npm run lint",
+        "postrelease": "git push --follow-tags origin HEAD && npm publish"
+      },
+      "engines": {
+        "node": ">= 8"
+      },
+      "dependencies": {
+        "which": "^2.0.1",
+        "path-key": "^3.1.0",
+        "shebang-command": "^2.0.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "csstype",
+      "version": "3.2.3",
+      "integrity": "sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==",
+      "scripts": {
+        "prepublish": "npm install --no-save --prefix __tests__ && npm install --no-save --prefix __tests__/__fixtures__",
+        "release": "release-it",
+        "update": "tsx update.ts",
+        "build": "tsx --inspect build.ts --start",
+        "watch": "tsx build.ts --watch",
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+        "pretty": "prettier --write build.ts **/*.{ts,js,json,md}",
+        "lazy": "tsc && npm run lint",
+        "test": "jest --runInBand",
+        "test:src": "jest src.*.ts",
+        "test:dist": "jest dist.*.ts --runInBand"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "d3-array",
+      "version": "3.2.4",
+      "integrity": "sha512-tdQAmyA18i4J7wprpYq8ClcxZy3SC31QMeByyCFyRt7BVHdREQZ5lpzoe5mFEYZUWe+oq8HBvk9JjpibyEV4Jg==",
+      "scripts": {
+        "test": "mocha 'test/**/*-test.js' && eslint src test",
+        "prepublishOnly": "rm -rf dist && rollup -c",
+        "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {
+        "internmap": "1 - 2"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "d3-array",
+      "version": "3.2.1",
+      "integrity": "sha512-gUY/qeHq/yNqqoCKNq4vtpFLdoCdvyNpWoC/KNjhGbhDuQpAM9sIQQKkXSNpXa9h5KySs/gzm7R88WkUutgwWQ==",
+      "scripts": {
+        "test": "mocha 'test/**/*-test.js' && eslint src test",
+        "prepublishOnly": "rm -rf dist && rollup -c",
+        "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {
+        "internmap": "1 - 2"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "d3-color",
+      "version": "3.1.0",
+      "integrity": "sha512-zg/chbXyeBtMQ1LbD/WSoW2DpC3I0mpmPdW+ynRTj/x2DAWYrIY7qeZIHidozwV24m4iavr15lNwIwLxRmOxhA==",
+      "scripts": {
+        "test": "mocha 'test/**/*-test.js' && eslint src test",
+        "prepublishOnly": "rm -rf dist && yarn test && rollup -c",
+        "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "d3-delaunay",
+      "version": "6.0.2",
+      "integrity": "sha512-IMLNldruDQScrcfT+MWnazhHbDJhcRJyOEBAJfwQnHle1RPh6WDuLvxNArUju2VSMSUuKlY5BGHRJ2cYyoFLQQ==",
+      "scripts": {
+        "test": "mocha 'test/**/*-test.js' && eslint src test",
+        "prepublishOnly": "rm -rf dist && yarn test && rollup -c",
+        "postpublish": "git push && git push --tags"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {
+        "delaunator": "5"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "d3-format",
+      "version": "3.1.0",
+      "integrity": "sha512-YyUI6AEuY/Wpt8KWLgZHsIU86atmikuoOmCfommt0LYHiQSPjvX2AcFc38PX0CBpr2RCyZhjex+NS/LPOv6YqA==",
+      "scripts": {
+        "test": "mocha 'test/**/*-test.js' && eslint src test",
+        "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -",
+        "prepublishOnly": "rm -rf dist && yarn test && rollup -c"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "d3-format",
+      "version": "3.1.2",
+      "integrity": "sha512-AJDdYOdnyRDV5b6ArilzCPPwc1ejkHcoyFarqlPqT7zRYjhavcT3uSrqcMvsgh2CgoPbK3RCwyHaVyxYcP2Arg==",
+      "scripts": {
+        "test": "vitest",
+        "lint": "eslint src test",
+        "prepublishOnly": "rm -rf dist && rollup -c"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "d3-geo",
+      "version": "3.1.0",
+      "integrity": "sha512-JEo5HxXDdDYXCaWdwLRt79y7giK8SbhZJbFWXqbRTolCHFI5jRqteLzCsq51NKbUoX0PjBVSohxrx+NoOUujYA==",
+      "scripts": {
+        "test": "mocha 'test/**/*-test.js' && eslint src test",
+        "prepublishOnly": "rm -rf dist && rollup -c",
+        "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {
+        "d3-array": "2.5.0 - 3"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "d3-interpolate",
+      "version": "3.0.1",
+      "integrity": "sha512-3bYs1rOD33uo8aqJfKP3JWPAibgw8Zm2+L9vBKEHJ2Rg+viTR7o5Mmv5mZcieN+FRYaAOWX5SJATX6k1PWz72g==",
+      "scripts": {
+        "test": "mocha 'test/**/*-test.js' && eslint src test",
+        "prepublishOnly": "rm -rf dist && yarn test && rollup -c",
+        "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {
+        "d3-color": "1 - 3"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "d3-path",
+      "version": "3.1.0",
+      "integrity": "sha512-p3KP5HCf/bvjBSSKuXid6Zqijx7wIfNW+J/maPs+iwR35at5JCbLUT0LzF1cnjbCHWhqzQTIN2Jpe8pRebIEFQ==",
+      "scripts": {
+        "test": "mocha 'test/**/*-test.js' && eslint src test",
+        "prepublishOnly": "rm -rf dist && yarn test && rollup -c",
+        "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "d3-scale",
+      "version": "4.0.2",
+      "integrity": "sha512-GZW464g1SH7ag3Y7hXjf8RoUuAFIqklOAq3MRl4OaWabTFJY9PN/E1YklhXLh+OQ3fM9yS2nOkCoS+WLZ6kvxQ==",
+      "scripts": {
+        "test": "TZ=America/Los_Angeles mocha 'test/**/*-test.js' && eslint src test",
+        "prepublishOnly": "rm -rf dist && yarn test && rollup -c",
+        "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {
+        "d3-array": "2.10.0 - 3",
+        "d3-format": "1 - 3",
+        "d3-interpolate": "1.2.0 - 3",
+        "d3-time": "2.1.1 - 3",
+        "d3-time-format": "2 - 4"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "d3-shape",
+      "version": "3.2.0",
+      "integrity": "sha512-SaLBuwGm3MOViRq2ABk3eLoxwZELpH6zhl3FbAoJ7Vm1gofKx6El1Ib5z23NUEhF9AsGl7y+dzLe5Cw2AArGTA==",
+      "scripts": {
+        "test": "mocha 'test/**/*-test.js' && eslint src test",
+        "prepublishOnly": "rm -rf dist && rollup -c",
+        "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {
+        "d3-path": "^3.1.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "d3-time",
+      "version": "3.1.0",
+      "integrity": "sha512-VqKjzBLejbSMT4IgbmVgDjpkYrNWUYJnbCGo874u7MMKIWsILRX+OpX/gTk8MqjpT1A/c6HY2dCA77ZN0lkQ2Q==",
+      "scripts": {
+        "test": "TZ=America/Los_Angeles mocha 'test/**/*-test.js' && eslint src test",
+        "prepublishOnly": "rm -rf dist && yarn test && rollup -c",
+        "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {
+        "d3-array": "2 - 3"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "d3-time-format",
+      "version": "4.1.0",
+      "integrity": "sha512-dJxPBlzC7NugB2PDLwo9Q8JiTR3M3e4/XANkreKSUxF8vvXKqm1Yfq4Q5dl8budlunRVlUUaDUgFt7eA8D6NLg==",
+      "scripts": {
+        "test": "TZ=America/Los_Angeles mocha 'test/**/*-test.js' && eslint src test",
+        "prepublishOnly": "rm -rf dist && yarn test && rollup -c",
+        "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {
+        "d3-time": "1 - 3"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "deepmerge-ts",
+      "version": "8.0.2",
+      "integrity": "sha512-uqbvqLUMrc6p0MO+WBRtTxY55hmyh94WRwI5a++PZe54X+bfVh59FSN7uWCBCW1CCVjzjnrwzfI8zidE2obMMw==",
+      "scripts": {
+        "cz": "git-cz",
+        "lint": "eslint && pnpm run lint:md && pnpm run lint:spelling && pnpm run lint:knip && pnpm run lint:package && pnpm run lint:packages",
+        "test": "pnpm run test:js-run && pnpm run test:types",
+        "build": "rimraf dist && rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript --configImportAttributesKey with",
+        "lint:js": "eslint \"**/*.?([cm])[jt]s?(x)\"",
+        "lint:md": "markdownlint-cli2",
+        "prepare": "husky",
+        "release": "pnpm dlx --package semantic-release --package @sebbo2002/semantic-release-jsr --package @semantic-release/changelog --package @semantic-release/commit-analyzer --package @semantic-release/git --package @semantic-release/github --package @semantic-release/npm --package @semantic-release/release-notes-generator --package semantic-release-publint semantic-release",
+        "test:js": "vitest --coverage",
+        "lint-fix": "eslint --fix && pnpm run lint:md-fix && pnpm run lint:packages-fix",
+        "benchmark": "pnpm run build:check && pnpm --dir benchmark run benchmark",
+        "lint:knip": "knip",
+        "lint:yaml": "eslint \"**/*.y?(a)ml\"",
+        "typecheck": "pnpm run typecheck:root && pnpm run typecheck:src",
+        "test:types": "pnpm run build:check && tsd -f 'tests/**/*.test-d.ts' -t 'dist/index.d.mts'",
+        "build:check": "node --strip-types scripts/check-build.ts",
+        "lint:js-fix": "eslint \"**/*.?([cm])[jt]s?(x)\" --fix",
+        "lint:md-fix": "markdownlint-cli2 --fix",
+        "test:js-run": "vitest run --coverage",
+        "lint:md-full": "pnpm run lint:md && eslint \"**/*.md\"",
+        "lint:package": "publint --strict",
+        "lint:packages": "pnpm dedupe --check",
+        "lint:spelling": "cspell lint --no-progress --show-suggestions --show-context --dot \"**\" \".github/**/*\"",
+        "lint:yaml-fix": "eslint \"**/*.y?(a)ml\" --fix",
+        "typecheck:src": "tsc -p ./src/tsconfig.json --noEmit",
+        "typecheck:root": "tsc -p ./tsconfig.json --noEmit",
+        "benchmark:types": "node --strip-types scripts/benchmark-types.ts",
+        "lint:md-full-fix": "pnpm run lint:md-fix && eslint \"**/*.md\" --fix",
+        "lint:packages-fix": "pnpm dedupe",
+        "typecheck:consumer-ts7": "pnpm run build:check && tsc -p ./tests/consumer-ts7/tsconfig.json --noEmit",
+        "benchmark:types:baseline": "node --strip-types scripts/benchmark-types.ts --update"
+      },
+      "engines": {
+        "node": ">=16.9.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "defu",
+      "version": "6.1.7",
+      "integrity": "sha512-7z22QmUWiQ/2d0KkdYmANbRUVABpZ9SNYyH5vx6PZ+nE5bcC0l7uFvEfHlyld/HcGBFTL536ClDt3DEcSlEJAQ==",
+      "scripts": {
+        "build": "unbuild",
+        "dev": "vitest",
+        "lint": "oxlint src && oxfmt --check src test",
+        "lint:fix": "oxlint src --fix && oxfmt src test",
+        "release": "pnpm test && pnpm build && changelogen --release && git push --follow-tags && pnpm publish",
+        "test": "pnpm lint && pnpm test:types && pnpm vitest run",
+        "test:types": "tsgo --noEmit"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "delaunator",
+      "version": "5.1.0",
+      "integrity": "sha512-AGrQ4QSgssa1NGmWmLPqN5NY2KajF5MqxetNEO+o0n3ZwZZeTmt7bBnvzHWrmkZFxGgr4HdyFgelzgi06otLuQ==",
+      "scripts": {
+        "lint": "eslint index.js test/test.js bench.js rollup.config.js docs/diagrams.js",
+        "pretest": "npm run lint",
+        "test": "tsc && node test/test.js",
+        "cov": "node --experimental-test-coverage test/test.js",
+        "bench": "node bench.js",
+        "build": "rollup -c",
+        "start": "rollup -cw",
+        "prepublishOnly": "npm test && npm run build"
+      },
+      "engines": {},
+      "dependencies": {
+        "robust-predicates": "^3.0.2"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "destr",
+      "version": "2.0.5",
+      "integrity": "sha512-ugFTXCtDZunbzasqBxrK93Ik/DRYsO6S/fedkWEMKqt04xZ4csmnmwGDBAb07QWNaGMAmnTIemsYZCksjATwsA==",
+      "scripts": {
+        "bench:bun": "pnpm build && bun --bun ./test/bench.mjs",
+        "bench:node": "pnpm build && node ./test/bench.mjs",
+        "build": "unbuild",
+        "dev": "vitest dev",
+        "lint": "eslint . && prettier -c src test",
+        "lint:fix": "eslint . --fix && prettier -w src test",
+        "release": "pnpm test && pnpm build && changelogen --release --push && npm publish",
+        "test": "pnpm lint && vitest run --coverage"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "detect-libc",
+      "version": "2.0.2",
+      "integrity": "sha512-UX6sGumvvqSaXgdKGUsgZWqcUyIXZ/vZTrlRT/iobiKhGL0zL4d3osHj3uqllWJK+i+sixDS/3COVEOFbupFyw==",
+      "scripts": {
+        "test": "semistandard && nyc --reporter=lcov --check-coverage --branches=100 ava test/unit.js",
+        "bench": "node benchmark/detect-libc",
+        "bench:calls": "node benchmark/call-familySync.js && sleep 1 && node benchmark/call-isNonGlibcLinuxSync.js && sleep 1 && node benchmark/call-versionSync.js"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "integrity": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==",
+      "scripts": {
+        "test": "semistandard && nyc --reporter=text --check-coverage --branches=100 ava test/unit.js",
+        "changelog": "conventional-changelog -i CHANGELOG.md -s",
+        "bench": "node benchmark/detect-libc",
+        "bench:calls": "node benchmark/call-familySync.js && sleep 1 && node benchmark/call-isNonGlibcLinuxSync.js && sleep 1 && node benchmark/call-versionSync.js"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "dotenv",
+      "version": "17.4.2",
+      "integrity": "sha512-nI4U3TottKAcAD9LLud4Cb7b2QztQMUEfHbvhTH09bqXTxnSie8WnjPALV/WMCrJZ6UV/qHJ6L03OqO3LcdYZw==",
+      "scripts": {
+        "lint": "standard",
+        "test": "tap run tests/**/*.js --allow-empty-coverage --disable-coverage --timeout=60000",
+        "pretest": "npm run lint && npm run dts-check",
+        "release": "standard-version",
+        "dts-check": "tsc --project tests/types/tsconfig.json",
+        "prerelease": "npm test",
+        "test:coverage": "tap run tests/**/*.js --show-full-coverage --timeout=60000 --coverage-report=text --coverage-report=lcov"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "effect",
+      "version": "3.20.0",
+      "integrity": "sha512-qMLfDJscrNG8p/aw+IkT9W7fgj50Z4wG5bLBy0Txsxz8iUHjDIkOgO3SV0WZfnQbNG2VJYb0b+rDLMrhM4+Krw==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {
+        "fast-check": "^3.23.1",
+        "@standard-schema/spec": "^1.0.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "elkjs",
+      "version": "0.11.1",
+      "integrity": "sha512-zxxR9k+rx5ktMwT/FwyLdPCrq7xN6e4VGGHH8hA01vVYKjTFik7nHOxBnAYtrgYUB1RpAiLvA1/U2YraWxyKKg==",
+      "scripts": {
+        "cp": "cp build/js/elk-worker*.js lib/ && cp build/js/main-node.js lib/main.js && cp typings/*.d.ts lib/",
+        "js": "npm run babel && npm run browserify && npm run cp",
+        "test": "mocha test/mocha",
+        "babel": "babel src/js/ -d build/js/",
+        "build": "npm run gradle && npm run js",
+        "clean": "./gradlew clean && rm -r lib",
+        "gradle": "./gradlew lib",
+        "browserify": "mkdirp lib && npm run browserifyApi && npm run browserifyBundle",
+        "browserifyApi": "browserify build/js/main-api.js -s ELK --outfile lib/elk-api.js",
+        "setDevVersion": "npm version --no-git-tag-version \"$(node -p \"require('./package.json').version\")-dev-$(date '+%Y%m%d')\"",
+        "browserifyBundle": "browserify build/js/main-node.js -s ELK --outfile lib/elk.bundled.js"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "empathic",
+      "version": "2.0.0",
+      "integrity": "sha512-i6UzDscO/XfAcNYD75CfICkmfLedpyPDdozrLMmQc5ORaQcdMoc21OnlEylMIqI7U8eniKrPMxxtj8k0vhmJhA==",
+      "scripts": {
+        "test": "uvu"
+      },
+      "engines": {
+        "node": ">=14"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "env-paths",
+      "version": "3.0.0",
+      "integrity": "sha512-dtJUTepzMW3Lm/NPxRf3wP4642UWhjL2sQxc+ym2YMj1m/H2zDNQOlezafzkHwn6sMstjHTwG6iQQsctDW/b1A==",
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "engines": {
+        "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "exsolve",
+      "version": "1.2.0",
+      "integrity": "sha512-h1pQPR9XoeSMdntRNCjyTznaume4UpfXrULBnlkZ2CUM/G5eSa+pBByGldO5uR8dxbPC+OuJXsPPNf+JZ81ADg==",
+      "scripts": {
+        "dev": "vitest dev",
+        "fmt": "automd && oxlint && oxfmt .",
+        "lint": "oxlint . && oxfmt --check .",
+        "test": "pnpm lint && pnpm test:types && vitest run --coverage",
+        "build": "obuild",
+        "node-ts": "node --disable-warning=ExperimentalWarning --experimental-strip-types",
+        "release": "pnpm test && pnpm build && changelogen --release && pnpm publish && git push --follow-tags",
+        "test:types": "tsc --noEmit --skipLibCheck"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "fast-check",
+      "version": "3.23.2",
+      "integrity": "sha512-h5+1OzzfCC3Ef7VbtKdcv7zsstUQwUDlYpUTvjeUsJAssPgLn7QzbboPtL5ro04Mq0rPOsMzl7q5hIbRs2wD1A==",
+      "scripts": {
+        "e2e": "vitest --config vitest.e2e.config.mjs",
+        "docs": "api-extractor run --local && rm docs/fast-check.api.json && typedoc --out docs src/fast-check-default.ts && node postbuild/main.mjs",
+        "test": "vitest --config vitest.unit.config.mjs",
+        "build": "yarn build:publish-cjs && yarn build:publish-esm && yarn build:publish-types && node postbuild/main.mjs",
+        "docs-ci": "cross-env EXPECT_GITHUB_SHA=true yarn docs",
+        "build-ci": "cross-env EXPECT_GITHUB_SHA=true yarn build",
+        "typecheck": "tsc --noEmit",
+        "docs:serve": "yarn dlx serve docs/",
+        "test-bundle": "node test-bundle/run.cjs && node test-bundle/run.mjs && node test-bundle/run-advanced.cjs",
+        "build:publish-cjs": "tsc -p tsconfig.publish.json",
+        "build:publish-esm": "tsc -p tsconfig.publish.json --module es2015 --moduleResolution node --outDir lib/esm && cp package.esm-template.json lib/esm/package.json",
+        "test-legacy-bundle": "nvs add 8 && $(nvs which 8) test-bundle/run.cjs && $(nvs which 8) test-bundle/run-advanced.cjs",
+        "build:publish-types": "tsc -p tsconfig.publish.types.json && tsc -p tsconfig.publish.types.json --outDir lib/esm/types",
+        "update:documentation": "cross-env UPDATE_CODE_SNIPPETS=true vitest --config vitest.documentation.config.mjs"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "dependencies": {
+        "pure-rand": "^6.1.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "fast-decode-uri-component",
+      "version": "1.0.1",
+      "integrity": "sha512-WKgKWg5eUxvRZGwW8FvfbaH7AXSh2cL+3j5fMGzUMCxWBJ3dV3a7Wz8y2f/uQ0e3B6WmodD3oS54jTQ9HVTIIg==",
+      "scripts": {
+        "test": "standard && tap test.js",
+        "bench": "node bench.js"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "integrity": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==",
+      "scripts": {
+        "eslint": "eslint *.js benchmark/*.js spec/*.js",
+        "build": "node build",
+        "benchmark": "npm i && npm run build && cd ./benchmark && npm i && node ./",
+        "test-spec": "mocha spec/*.spec.js -R spec",
+        "test-cov": "nyc npm run test-spec",
+        "test-ts": "tsc --target ES5 --noImplicitAny index.d.ts",
+        "test": "npm run build && npm run eslint && npm run test-ts && npm run test-cov",
+        "prepublish": "npm run build"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "fast-querystring",
+      "version": "1.1.2",
+      "integrity": "sha512-g6KuKWmFXc0fID8WWH0jit4g0AGBoJhCkJMb1RmbsSEUNvQ+ZC8D6CUZ+GtF8nMzSPXnhiePyyqqipzNNEnHjg==",
+      "scripts": {
+        "test": "vitest",
+        "format": "rome format . --write",
+        "coverage": "vitest run --coverage",
+        "benchmark": "node benchmark/bench.js",
+        "format:ci": "rome ci .",
+        "test:watch": "vitest --watch",
+        "test:coverage": "vitest --coverage",
+        "benchmark:parse": "node benchmark/parse.mjs",
+        "benchmark:import": "node benchmark/import.mjs",
+        "benchmark:stringify": "node benchmark/stringify.mjs",
+        "benchmark:cmp-branch": "node benchmark/bench-cmp-branch.js",
+        "test:environment:edge": "vitest --environment=edge-runtime",
+        "test:environment:browser": "vitest --environment=jsdom"
+      },
+      "engines": {},
+      "dependencies": {
+        "fast-decode-uri-component": "^1.0.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "fast-uri",
+      "version": "3.1.9",
+      "integrity": "sha512-hS/0Wt3Ya043oKXs0sIxrMpKQITXhMLIrVAKKXi4gozGC9v7YRWVnXIZzjNPTO02M9BdxLCWqK1yRXgNziVyJQ==",
+      "scripts": {
+        "lint": "eslint",
+        "test": "npm run test:unit && npm run test:typescript",
+        "lint:fix": "eslint --fix",
+        "test:unit": "tape test/**/*.js",
+        "test:browser": "npm run test:browser:chromium && npm run test:browser:firefox && npm run test:browser:webkit",
+        "test:unit:dev": "npm run test:unit -- --coverage-report=html",
+        "test:typescript": "tsd",
+        "test:browser:webkit": "playwright-test ./test/* --runner tape --browser=webkit",
+        "test:browser:firefox": "playwright-test ./test/* --runner tape --browser=firefox",
+        "test:browser:chromium": "playwright-test ./test/* --runner tape --browser=chromium"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "find-my-way",
+      "version": "9.7.0",
+      "integrity": "sha512-f2JHn75x2JlwUwLenZypgczR7YWMb/uO9BvUXtus+JMgkbIkLADd38cI4EiV+OQqrGo1Zlq6V8wnqMJ8e62wUQ==",
+      "scripts": {
+        "test": "standard && borp && npm run test:typescript",
+        "bench": "node ./benchmark/bench.js",
+        "bench:cmp": "node ./benchmark/compare-branches.js",
+        "test:lint": "standard",
+        "bench:cmp:ci": "node ./benchmark/compare-branches.js --ci",
+        "test:typescript": "tsd"
+      },
+      "engines": {
+        "node": ">=20"
+      },
+      "dependencies": {
+        "safe-regex2": "^5.0.0",
+        "fast-deep-equal": "^3.1.3",
+        "fast-querystring": "^1.0.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "foreground-child",
+      "version": "3.3.1",
+      "integrity": "sha512-gIXjKqtFuWEgzFRJA9WCQeSJLZDjgJUOMCMzxtvFq/37KojM1BFGufqsCy0r4qSQmYLsZYMeyRqzIWOMup03sw==",
+      "scripts": {
+        "snap": "tap",
+        "test": "tap",
+        "format": "prettier --write . --log-level warn",
+        "prepare": "tshy",
+        "presnap": "npm run prepare",
+        "pretest": "npm run prepare",
+        "typedoc": "typedoc --tsconfig .tshy/esm.json ./src/*.ts",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "prepublishOnly": "git push origin --follow-tags"
+      },
+      "engines": {
+        "node": ">=14"
+      },
+      "dependencies": {
+        "cross-spawn": "^7.0.6",
+        "signal-exit": "^4.0.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "generate-function",
+      "version": "2.3.1",
+      "integrity": "sha512-eeB5GfMNeevm/GRYq20ShmsaGcmI81kIX2K9XQx5miC8KdHaC6Jm0qQ8ZNeGOi7wYB8OsdxKs+Y2oVuTFuVwKQ==",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "engines": {},
+      "dependencies": {
+        "is-property": "^1.0.2"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "get-port-please",
+      "version": "3.2.0",
+      "integrity": "sha512-I9QVvBw5U/hw3RmWpYKRumUeaDgxTPd401x364rLmWBJcOQ753eov1eTgzDqRG9bqFIfDc7gfzcQEWrUri3o1A==",
+      "scripts": {
+        "build": "unbuild",
+        "dev": "vitest",
+        "lint": "eslint . && prettier -c src test",
+        "lint:fix": "eslint --fix . && prettier -w src test",
+        "release": "pnpm test && pnpm build && changelogen --release --push && pnpm publish",
+        "test": "pnpm lint && vitest run"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "giget",
+      "version": "3.3.1",
+      "integrity": "sha512-r+mvuDjrjMpsdw46Kmeydb8bdHm7wOKw8wNBtTndkjbPjgAp5oUJUxRE76wZFknxIPokfWvep2qSXK37aXE6zg==",
+      "scripts": {
+        "dev": "vitest dev",
+        "lint": "oxlint . && oxfmt --check src test",
+        "play": "pnpm giget --force-clean --verbose unjs .tmp/clone",
+        "test": "pnpm lint && pnpm test:types && vitest run --coverage",
+        "build": "obuild",
+        "giget": "node ./src/cli.ts",
+        "release": "pnpm test && pnpm build && changelogen --release && npm publish && git push --follow-tags",
+        "lint:fix": "oxlint . --fix && oxfmt src test",
+        "test:types": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "graceful-fs",
+      "version": "4.2.11",
+      "integrity": "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==",
+      "scripts": {
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --follow-tags",
+        "test": "nyc --silent node test.js | tap -c -",
+        "posttest": "nyc report"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "grammex",
+      "version": "3.1.13",
+      "integrity": "sha512-LnPnhOBLEJEVKS8WFDVaA397L9Kq55Q9oSITJiVLHVdhAclfUkWzQv74KhvZHKL2Q09Pb1XdsrOsZ4LfTFFTEg==",
+      "scripts": {
+        "benchmark": "tsex benchmark",
+        "benchmark:watch": "tsex benchmark --watch",
+        "clean": "tsex clean",
+        "compile": "tsex compile",
+        "compile:watch": "tsex compile --watch",
+        "test": "tsex test",
+        "test:watch": "tsex test --watch",
+        "prepublishOnly": "tsex prepare"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "graphmatch",
+      "version": "1.1.1",
+      "integrity": "sha512-5ykVn/EXM1hF0XCaWh05VbYvEiOL2lY1kBxZtaYsyvjp7cmWOU1XsAdfQBwClraEofXDT197lFbXOEVMHpvQOg==",
+      "scripts": {
+        "benchmark": "tsex benchmark",
+        "benchmark:watch": "tsex benchmark --watch",
+        "clean": "tsex clean",
+        "compile": "tsex compile",
+        "compile:watch": "tsex compile --watch",
+        "test": "tsex test",
+        "test:watch": "tsex test --watch",
+        "prepublishOnly": "tsex prepare"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "iconv-lite",
+      "version": "0.7.3",
+      "integrity": "sha512-IKXpvIzjnC9XTAUbVBcMfGS0EPaIXtW6v+zr+RRp+hqULEpo0owZax6wyRwPOJbWbzjYspQwusTsfVr0ifh4uQ==",
+      "scripts": {
+        "lint": "eslint",
+        "test": "mocha --reporter spec --check-leaks --grep .",
+        "test:ci": "nyc --exclude test --reporter=lcovonly --reporter=text npm test",
+        "typegen": "node generation/gen-typings.js",
+        "lint:fix": "eslint --fix",
+        "test:cov": "nyc --exclude test --reporter=html --reporter=text npm test",
+        "test:tap": "mocha --reporter tap --check-leaks --grep .",
+        "test:webpack": "npm pack && mv iconv-lite-*.tgz test/webpack/iconv-lite.tgz && cd test/webpack && npm install && npm run test && rm iconv-lite.tgz",
+        "test:typescript": "tsc && attw --pack",
+        "test:performance": "node --allow-natives-syntax performance/index.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "dependencies": {
+        "safer-buffer": ">= 2.1.2 < 3.0.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "internmap",
+      "version": "2.0.3",
+      "integrity": "sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==",
+      "scripts": {
+        "test": "mocha 'test/**/*-test.js' && eslint src test",
+        "prepublishOnly": "rm -rf dist && yarn test && rollup -c",
+        "postpublish": "git push && git push --tags"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "is-property",
+      "version": "1.0.2",
+      "integrity": "sha512-Ks/IoX00TtClbGQr4TWXemAnktAQvYB7HzcCxDGqEZU6oCmb2INHuOoKxbtR+HFkmYWBKv/dOZtGRiAjDhj92g==",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "isexe",
+      "version": "2.0.0",
+      "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==",
+      "scripts": {
+        "test": "tap test/*.js --100",
+        "preversion": "npm test",
+        "postpublish": "git push origin --all; git push origin --tags",
+        "postversion": "npm publish"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "jiti",
+      "version": "2.7.0",
+      "integrity": "sha512-AC/7JofJvZGrrneWNaEnJeOLUx+JlGt7tNa0wZiRPT4MY1wmfKjt2+6O2p2uz2+skll8OZZmJMNqeke7kKbNgQ==",
+      "scripts": {
+        "bench": "node test/bench.mjs && deno -A test/bench.mjs && bun --bun test/bench.mjs",
+        "build": "pnpm clean && pnpm rspack",
+        "build:rolldown": "pnpm clean && pnpm rolldown -c rolldown.config.mjs",
+        "clean": "rm -rf dist",
+        "dev": "pnpm clean && pnpm rspack --watch",
+        "jiti": "JITI_DEBUG=1 JITI_JSX=1 lib/jiti-cli.mjs",
+        "lint": "eslint . && prettier -c src lib test stubs",
+        "lint:fix": "eslint --fix . && prettier -w src lib test stubs",
+        "prepack": "pnpm build",
+        "release": "pnpm build && pnpm test && changelogen --release --push && npm publish",
+        "test": "pnpm lint && pnpm test:types && vitest run --coverage && pnpm test:node-register && pnpm test:bun && pnpm test:native",
+        "test:bun": "bun --bun test test/bun",
+        "test:native": "pnpm test:native:bun && pnpm test:native:node && pnpm test:native:deno",
+        "test:native:bun": "bun --bun test test/native/bun.test.ts",
+        "test:native:deno": "deno test -A --no-check test/native/deno.test.ts",
+        "test:native:node": "node --test --experimental-strip-types test/native/node.test.ts",
+        "test:node-register": "JITI_JSX=1 node --test test/node-register.test.mjs",
+        "test:types": "tsgo --noEmit"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "jose",
+      "version": "6.2.13",
+      "integrity": "sha512-7TIg10ZE1x82YediN+lcrPNvGMKge9yFHQD+Qho/b8y2adfugU3AsvvHfxV0fzyFllT6l9xCjf4RWY9g/Z9PJQ==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "js-base64",
+      "version": "3.9.5",
+      "integrity": "sha512-u0CFDUca8BbBRkMkF/fDcuoLCx9nTNbXdVtbjVnBqySA9E221u0uYKbACiYGOEk1heY69qM4caeX3OwjSyxevw==",
+      "scripts": {
+        "test": "npm run build && mocha && npm run test:types",
+        "build": "rollup -c && tsc -p . --declaration --emitDeclarationOnly && node -e \"require('fs').copyFileSync('base64.d.ts','base64.d.mts')\"",
+        "clean": "node -e \"['base64.js','base64.mjs','base64.d.ts','base64.d.mts'].forEach(f=>require('fs').rmSync(f,{force:true}))\"",
+        "version": "npm run build && node util/sync-version.js && git add base64.js base64.mjs base64.d.ts base64.d.mts README.md",
+        "test:types": "tsc --noEmit --strict --module nodenext --lib es2020,dom test/types.cts test/types.mts"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "json-schema-traverse",
+      "version": "1.0.0",
+      "integrity": "sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==",
+      "scripts": {
+        "eslint": "eslint index.js spec",
+        "test-spec": "mocha spec -R spec",
+        "test": "npm run eslint && nyc npm run test-spec"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "kysely",
+      "version": "0.29.7",
+      "integrity": "sha512-fmIq+7kv4WbFm2tcfznRzikqB4cuNpgZ40PSU2fAJ2/OO5XhojqnTPrmgrCjYSRJVwBln03XcRXJGnw9H099IQ==",
+      "scripts": {
+        "test": "pnpm run build && pnpm run test:node:build && pnpm run test:node:run && pnpm run test:typings && pnpm run test:esmimports && pnpm run test:exports",
+        "build": "pnpm run clean && tsc && pnpm run script:add-deno-type-references && pnpm run script:copy-interface-doc",
+        "clean": "rm -rf dist & rm -rf test/node/dist & rm -rf test/browser/bundle.js",
+        "version": "pnpm run script:align-versions && git add .",
+        "bench:ts": "pnpm run build && node --experimental-strip-types ./test/ts-benchmarks/index.ts",
+        "prettier": "prettier --write 'src/**/*.ts' 'test/**/*.ts'",
+        "test:bun": "pnpm run build && bun link && cd test/bun && bun install && bun run test",
+        "lint:deno": "deno lint --config=\"deno.lint.json\" ./src",
+        "test:deno": "deno run --allow-env --allow-read --allow-net --no-lock test/deno/test.ts",
+        "test:node": "pnpm run build && pnpm run test:node:build && pnpm run test:node:run",
+        "test:jsdocs": "deno check --doc-only --no-lock --unstable-sloppy-imports --config=\"deno.check.json\" ./src",
+        "test:browser": "pnpm run build && pnpm run test:browser:build && node test/browser/test.js",
+        "test:esbuild": "esbuild --bundle --platform=node --external:pg-native dist/index.js --outfile=/dev/null",
+        "test:exports": "attw --profile esm-only --pack . && node scripts/check-exports.cjs",
+        "test:typings": "tsd test/typings",
+        "test:node:run": "mocha --timeout 15000 test/node/dist/**/*.test.js",
+        "test:esmimports": "node scripts/check-esm-imports.cjs",
+        "test:node:build": "tsc -p test/node",
+        "test:outdatedts": "pnpm run build && cd test/outdated-ts && pnpm i && pnpm run test",
+        "test:browser:build": "rm -rf test/browser/bundle.js && esbuild test/browser/main.ts --bundle --outfile=test/browser/bundle.js",
+        "script:align-versions": "node --experimental-strip-types scripts/align-versions.mts",
+        "test:cloudflare-workers": "pnpm run build && pnpm -r --filter kysely-cloudflare-workers-test run test",
+        "script:copy-interface-doc": "node scripts/copy-interface-documentation.cjs",
+        "script:generate-site-examples": "node scripts/generate-site-examples.mts",
+        "script:add-deno-type-references": "node scripts/add-deno-type-references.cjs",
+        "script:override-tsconfig-target": "node --experimental-strip-types scripts/override-tsconfig-target.mts",
+        "script:remove-global-augmentations": "node --experimental-strip-types scripts/remove-global-augmentations.mts"
+      },
+      "engines": {
+        "node": ">=22.0.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "libsql",
+      "version": "0.5.29",
+      "integrity": "sha512-8lMP8iMgiBzzoNbAPQ59qdVcj6UaE/Vnm+fiwX4doX4Narook0a4GPKWBEv+CR8a1OwbfkgL18uBfBjWdF0Fzg==",
+      "scripts": {
+        "test": "cargo test",
+        "build": "npx tsc && cargo build --message-format=json --release | npm exec neon dist -- --name libsql-js",
+        "cross": "cross build --message-format=json --release | npm exec neon dist -- --name libsql-js -m /target",
+        "debug": "cargo build --message-format=json | npm exec neon dist",
+        "prepack": "neon install-builds",
+        "pack-build": "neon pack-build",
+        "postversion": "git push --follow-tags"
+      },
+      "engines": {},
+      "dependencies": {
+        "detect-libc": "2.0.2",
+        "@neon-rs/load": "^0.0.4"
+      },
+      "optionalDependencies": {
+        "@libsql/darwin-x64": "0.5.29",
+        "@libsql/darwin-arm64": "0.5.29",
+        "@libsql/linux-x64-gnu": "0.5.29",
+        "@libsql/linux-x64-musl": "0.5.29",
+        "@libsql/win32-x64-msvc": "0.5.29",
+        "@libsql/linux-arm64-gnu": "0.5.29",
+        "@libsql/linux-arm64-musl": "0.5.29",
+        "@libsql/linux-arm-gnueabihf": "0.5.29",
+        "@libsql/linux-arm-musleabihf": "0.5.29"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "lodash",
+      "version": "4.18.1",
+      "integrity": "sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==",
+      "scripts": {
+        "test": "echo \"See https://travis-ci.org/lodash-archive/lodash-cli for testing details.\""
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "long",
+      "version": "5.3.2",
+      "integrity": "sha512-mNAgZ1GmyNhD7AuqnTG3/VQ26o760+ZYBPKjPvugO8+nLbYfX6TVpJPseBvopbdY+qpZ/lKUnmEc1LeZYS3QAA==",
+      "scripts": {
+        "build": "node scripts/build.js",
+        "lint": "prettier --check .",
+        "format": "prettier --write .",
+        "test": "npm run test:unit && npm run test:typescript",
+        "test:unit": "node tests",
+        "test:typescript": "tsc --project tests/typescript/tsconfig.esnext.json && tsc --project tests/typescript/tsconfig.nodenext.json && tsc --project tests/typescript/tsconfig.commonjs.json && tsc --project tests/typescript/tsconfig.global.json"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "lru.min",
+      "version": "1.1.5",
+      "integrity": "sha512-5J9ysMYUpYIg9RF2vJpy9SinEmSviFSe0GyPpCQ4L5QSkLAgeLXlTAOu2ZwWUU5m+0SBl6gUU1R1ZQB3aKypfA==",
+      "scripts": {
+        "lint": "npx @biomejs/biome lint && prettier --check .",
+        "size": "ls -lh lib/index.mjs | awk '{print $5}'",
+        "build": "rm -rf ./browser ./lib && tsc && npm run build:esm && npm run build:browser",
+        "update": "pu minor && npm i && (npm audit fix || true) && npm run lint:fix",
+        "lint:fix": "npx @biomejs/biome lint --write && prettier --write .github/workflows/*.yml .",
+        "test:bun": "bun poku",
+        "build:esm": "esbuild src/index.ts --outfile=lib/index.mjs --platform=node --target=node12 --format=esm",
+        "test:deno": "deno run -A npm:poku",
+        "test:node": "poku",
+        "benchmark:cjs": "cd benchmark && npm ci && node index.cjs",
+        "benchmark:esm": "cd benchmark && npm ci && node index.mjs",
+        "build:browser": "tsx tools/browserfy.ts",
+        "test:coverage": "mcr --import tsx --config mcr.config.ts npm run test:node"
+      },
+      "engines": {
+        "bun": ">=1.0.0",
+        "deno": ">=1.30.0",
+        "node": ">=8.0.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "mysql2",
+      "version": "3.24.4",
+      "integrity": "sha512-A2olluVlj0mvgyIRRISMEzXc51m+21mRtcMVjJyIpt2GG98+XrC9m9HzsqcMsX2LcnfccJvY5NB22g8fENBnOA==",
+      "scripts": {
+        "lint": "biome lint --error-on-warnings && prettier --check .",
+        "test": "poku",
+        "lint:fix": "biome lint --write . && prettier --write .",
+        "src:test": "npm run src:build && tsx tools/src/prepare-tests.mts && poku --config=tools/src/poku.config.mts",
+        "test:bun": "bun poku",
+        "benchmark": "node ./benchmarks/benchmark.js",
+        "src:build": "tsx tools/src/clean.mts && tsc -p src/tsconfig.json",
+        "test:deno": "deno run -A npm:poku",
+        "typecheck": "cd \"test/tsc-build\" && tsc -p \"tsconfig.json\" && cd .. && tsc -p \"tsconfig.json\" --noEmit",
+        "wait-port": "wait-on",
+        "test:build": "rollup -c",
+        "src:test:bun": "npm run src:build && tsx tools/src/prepare-tests.mts && bun poku --config=tools/src/poku.config.mts",
+        "src:test:deno": "npm run src:build && tsx tools/src/prepare-tests.mts && deno run -A npm:poku --config=tools/src/poku.config.mts",
+        "src:typecheck": "tsc -p src/tsconfig.json --noEmit && tsc -p tools/src/tsconfig.json",
+        "test:coverage": "c8 npm test",
+        "test:docker:up": "docker compose -f test/docker-compose.yml up --abort-on-container-exit --remove-orphans",
+        "test:docker:bun": "npm run test:docker:up -- bun && npm run test:docker:down",
+        "test:docker:deno": "npm run test:docker:up -- deno && npm run test:docker:down",
+        "test:docker:down": "docker compose -f test/docker-compose.yml down",
+        "test:docker:node": "npm run test:docker:up -- node && npm run test:docker:down",
+        "test:docker:coverage": "npm run test:docker:up -- coverage && npm run test:docker:down"
+      },
+      "engines": {
+        "node": ">= 8.0"
+      },
+      "dependencies": {
+        "long": "^5.3.2",
+        "lru.min": "^1.1.4",
+        "iconv-lite": "^0.7.3",
+        "sql-escaper": "^1.5.1",
+        "aws-ssl-profiles": "^1.1.2",
+        "generate-function": "^2.3.1",
+        "named-placeholders": "^1.1.6"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@types/node": ">= 8"
+      },
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "named-placeholders",
+      "version": "1.1.6",
+      "integrity": "sha512-Tz09sEL2EEuv5fFowm419c1+a/jSMiBjI9gHxVLrVdbUkkNUUfjsVYs9pVZu5oCon/kmRh9TfLEObFtkVxmY0w==",
+      "scripts": {
+        "test": "node --test",
+        "lint": "biome lint --error-on-warnings && prettier --check .",
+        "lint:fix": "biome lint --write && prettier --write .github/workflows/*.yml ."
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "dependencies": {
+        "lru.min": "^1.1.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "nanostores",
+      "version": "1.5.5",
+      "integrity": "sha512-FixtE239Gl6Gz0ZGCK0WzvNwObNCIwVT+L7zQcf1QgcA6AzBxblzqe9OT88qiucNkhsjSOqiogSaF5jVbJiqSA==",
+      "scripts": {},
+      "engines": {
+        "node": "^20.0.0 || >=22.0.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "ohash",
+      "version": "2.0.12",
+      "integrity": "sha512-65S/5gk9YSsaRjcyf7Nfa6h/d3E8/1gslpXfI4W7Dxn/oap8IKRuNT5VXkLQ1YFKIEg4apRY4Pj6aiwFzrDdmw==",
+      "scripts": {
+        "dev": "vitest dev",
+        "lint": "eslint . && prettier -c src test",
+        "test": "pnpm lint && vitest run --coverage && pnpm test:types",
+        "bench": "vitest bench",
+        "build": "obuild",
+        "prepack": "pnpm build",
+        "release": "pnpm test && changelogen --release --push && pnpm publish",
+        "lint:fix": "automd && eslint --fix . && prettier -w src test",
+        "test:types": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "pako",
+      "version": "1.0.11",
+      "integrity": "sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==",
+      "scripts": {
+        "test": "make test"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "path-key",
+      "version": "3.1.1",
+      "integrity": "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==",
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "pathe",
+      "version": "2.0.3",
+      "integrity": "sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==",
+      "scripts": {
+        "build": "unbuild",
+        "dev": "vitest",
+        "lint": "eslint . && prettier -c src test",
+        "lint:fix": "eslint . --fix && prettier -w src test",
+        "release": "pnpm test && pnpm build && changelogen --release && pnpm publish && git push --follow-tags",
+        "test": "pnpm lint && vitest run --coverage",
+        "test:types": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "pdf-lib",
+      "version": "1.17.1",
+      "integrity": "sha512-V/mpyJAoTsN4cnP31vc0wfNA1+p20evqqnap0KLoRUN0Yk/p3wN52DOEsL4oBFcLdb76hlpKPtzJIgo67j/XLw==",
+      "scripts": {
+        "release:latest": "yarn publish --tag latest && yarn pack && yarn release:tag",
+        "release:next": "yarn publish --tag next",
+        "release:prep": "yarn clean && yarn lint && yarn typecheck && yarn test && yarn build",
+        "release:tag": "TAG=\"v$(yarn --silent get:version)\" && git tag $TAG && git push origin $TAG",
+        "get:version": "node --eval 'console.log(require(`./package.json`).version)'",
+        "clean": "rimraf ts3.4 build cjs dist es scratchpad/build coverage tsBuildInfo.json apps/node-build apps/node/tsBuildInfo.json isolate*.log flamegraph.html out.pdf",
+        "typecheck": "tsc --noEmit --incremental false --tsBuildInfoFile null",
+        "test": "jest --config jest.json --runInBand",
+        "testw": "jest --config jest.json --watch",
+        "testc": "jest --config jest.json --coverage && open coverage/index.html",
+        "lint": "yarn lint:prettier && yarn lint:tslint:src && yarn lint:tslint:tests",
+        "lint:tslint:src": "tslint --project tsconfig.json --fix",
+        "lint:tslint:tests": "tslint --project tests/tsconfig.json --fix",
+        "lint:prettier": "prettier --write \"./{src,tests,apps}/**/*.{ts,js,json,html,css}\" --loglevel error",
+        "build": "yarn build:cjs && yarn build:es && yarn build:esm && yarn build:esm:min && yarn build:umd && yarn build:umd:min && yarn build:downlevel-dts",
+        "build:cjs": "ttsc --module commonjs --outDir cjs",
+        "build:es": "ttsc --module ES2015 --outDir es",
+        "build:esm": "rollup --config rollup.config.js --file dist/pdf-lib.esm.js --environment MODULE_TYPE:es",
+        "build:esm:min": "rollup --config rollup.config.js --file dist/pdf-lib.esm.min.js --environment MINIFY,MODULE_TYPE:es",
+        "build:umd": "rollup --config rollup.config.js --file dist/pdf-lib.js --environment MODULE_TYPE:umd",
+        "build:umd:min": "rollup --config rollup.config.js --file dist/pdf-lib.min.js --environment MINIFY,MODULE_TYPE:umd",
+        "build:downlevel-dts": "rimraf ts3.4 && yarn downlevel-dts . ts3.4 && rimraf ts3.4/scratchpad",
+        "scratchpad:start": "ttsc --build scratchpad/tsconfig.json --watch",
+        "scratchpad:run": "node scratchpad/build/scratchpad/index.js",
+        "scratchpad:flame": "rimraf isolate*.log && node --prof scratchpad/build/scratchpad/index.js && node --prof-process --preprocess -j isolate*.log | flamebearer",
+        "apps:node": "ttsc --build apps/node/tsconfig.json && node apps/node-build/index.js",
+        "apps:deno": "deno run --allow-read --allow-write --allow-run apps/deno/index.ts",
+        "apps:web": "http-server -c-1 .",
+        "apps:web:mac": "bash -c 'sleep 1 && open http://localhost:8080/apps/web/test1.html' & yarn apps:web",
+        "apps:rn:ios": "cd apps/rn && yarn add ./../.. --force && react-native run-ios",
+        "apps:rn:android": "yarn apps:rn:emulator & cd apps/rn && yarn add ./../.. --force && react-native run-android",
+        "apps:rn:emulator": "emulator -avd \"$(emulator -list-avds | head -n 1)\" & bash -c 'sleep 5 && adb reverse tcp:8080 tcp:8080 && adb reverse tcp:8081 tcp:8081'"
+      },
+      "engines": {},
+      "dependencies": {
+        "@pdf-lib/standard-fonts": "^1.0.0",
+        "@pdf-lib/upng": "^1.0.1",
+        "pako": "^1.0.11",
+        "tslib": "^1.11.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "perfect-debounce",
+      "version": "2.1.0",
+      "integrity": "sha512-LjgdTytVFXeUgtHZr9WYViYSM/g8MkcTPYDlPa3cDqMirHjKiSZPYd6DoL7pK8AJQr+uWkQvCjHNdiMqsrJs+g==",
+      "scripts": {
+        "build": "obuild",
+        "dev": "vitest dev",
+        "lint": "eslint . && prettier --check src test",
+        "lint:fix": "eslint . --fix && prettier -w src test",
+        "release": "pnpm test && pnpm build && changelogen --release --push && npm publish",
+        "test": "vitest run --coverage"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "pkg-types",
+      "version": "2.4.0",
+      "integrity": "sha512-07Fys7iVx0X6TcviMOgogM1Lk33ZyqOezMnU79S+kffWqwolG/5W9V8EgQSeYCIfFTYVgssRbnH630Oa2+soBA==",
+      "scripts": {
+        "dev": "vitest --typecheck",
+        "fmt": "automd && oxlint --fix . && oxfmt",
+        "lint": "oxlint && oxfmt --check .",
+        "test": "pnpm lint && pnpm typecheck",
+        "build": "obuild",
+        "release": "pnpm test && pnpm build && changelogen --release && pnpm publish && git push --follow-tags",
+        "typecheck": "tsc --noEmit --skipLibCheck"
+      },
+      "engines": {},
+      "dependencies": {
+        "pathe": "^2.0.3",
+        "confbox": "^0.3.1",
+        "exsolve": "^1.1.3"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "postgres",
+      "version": "3.4.7",
+      "integrity": "sha512-Jtc2612XINuBjIl/QTWsV5UvE8UHuNblcO3vVADSrKsrc6RqGX6lOW1cEo3CM2v0XG4Nat8nI+YM7/f26VxXLw==",
+      "scripts": {
+        "lint": "eslint src && eslint tests",
+        "test": "npm run test:esm && npm run test:cjs && npm run test:deno",
+        "build": "npm run build:cjs && npm run build:deno && npm run build:cf",
+        "prepare": "npm run build",
+        "build:cf": "node transpile.cf.js",
+        "test:cjs": "npm run build:cjs && cd cjs/tests && node index.js && cd ../../",
+        "test:esm": "node tests/index.js",
+        "build:cjs": "node transpile.cjs",
+        "test:deno": "npm run build:deno && cd deno/tests && deno run --no-lock --allow-all --unsafely-ignore-certificate-errors index.js && cd ../../",
+        "build:deno": "node transpile.deno.js",
+        "prepublishOnly": "npm run lint"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "prisma",
+      "version": "7.10.1",
+      "integrity": "sha512-GoVeErHGGtsSjsflQ1r2BA3RKTXtxNraQJz8OLkLhoLr7OgCscdx4qw4WMM4HnERYc+a1cq2VnMNbep+vOjNcQ==",
+      "scripts": {
+        "pm": "tsx src/bin.ts platform --early-access",
+        "dev": "DEV=true tsx helpers/build.ts",
+        "tsc": "tsc -d -p tsconfig.build.json",
+        "test": "dotenv -e ../../.db.env -- tsx helpers/run-tests.ts",
+        "build": "tsx helpers/build.ts",
+        "prisma": "tsx src/bin.ts",
+        "platform": "tsx src/bin.ts platform --early-access",
+        "preinstall": "node scripts/preinstall-entry.js",
+        "test:platform": "dotenv -e ../../.db.env -- tsx helpers/run-tests.ts src/platform",
+        "generate-api-client": "openapi-typescript https://api.prisma.io/v1/doc --output ./src/management-api/openapi.d.ts && prettier --write ./src/management-api/openapi.d.ts"
+      },
+      "engines": {
+        "node": "^20.19 || ^22.12 || >=24.0"
+      },
+      "dependencies": {
+        "mysql2": "3.24.4",
+        "postgres": "3.4.7",
+        "@prisma/dev": "0.24.17",
+        "@prisma/config": "7.10.1",
+        "@prisma/engines": "7.10.1",
+        "@prisma/studio-core": "0.33.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "typescript": ">=5.4.0",
+        "better-sqlite3": ">=9.0.0"
+      },
+      "peerDependenciesMeta": {
+        "typescript": {
+          "optional": true
+        },
+        "better-sqlite3": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "promise-limit",
+      "version": "2.7.0",
+      "integrity": "sha512-7nJ6v5lnJsXwGprnGXga4wx6d1POjvi5Qmf1ivTRxTjH4Z/9Czja/UCMLVmB9N93GeWOU93XaFaEt6jbuoagNw==",
+      "scripts": {
+        "test": "mocha && eslint ."
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "proper-lockfile",
+      "version": "4.1.2",
+      "integrity": "sha512-TjNPblN4BwAWMXU8s9AEz4JmQxnD1NNL7bNOY/AKUzyamc379FWASUhc/K1pL2noVb+XmZKLL68cjzLsiOAMaA==",
+      "scripts": {
+        "lint": "eslint .",
+        "test": "jest --env node --coverage --runInBand",
+        "prerelease": "npm t && npm run lint",
+        "release": "standard-version",
+        "postrelease": "git push --follow-tags origin HEAD && npm publish"
+      },
+      "engines": {},
+      "dependencies": {
+        "graceful-fs": "^4.2.4",
+        "retry": "^0.12.0",
+        "signal-exit": "^3.0.2"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "pure-rand",
+      "version": "6.1.0",
+      "integrity": "sha512-bVWawvoZoBYpp6yIoQtQXHZjmz35RSVHnUOTefl8Vcjr8snTPY1wnpSPMWekcFwbxI6gtmT7rSYPFvz71ldiOA==",
+      "scripts": {
+        "test": "jest --config jest.config.js --coverage",
+        "bench": "node perf/benchmark.cjs",
+        "build": "tsc && tsc -p ./tsconfig.declaration.json",
+        "format": "prettier --write .",
+        "build:esm": "tsc --module es2015 --outDir lib/esm --moduleResolution node && tsc -p ./tsconfig.declaration.json --outDir lib/esm/types && cp package.esm-template.json lib/esm/package.json",
+        "build:prod": "yarn build && yarn build:esm && node postbuild/main.cjs",
+        "format:check": "prettier --list-different .",
+        "build:prod-ci": "cross-env EXPECT_GITHUB_SHA=true yarn build:prod",
+        "build:bench:new": "tsc --outDir lib-test/",
+        "build:bench:old": "tsc --outDir lib-reference/"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "rc9",
+      "version": "3.1.0",
+      "integrity": "sha512-ufjkNVzbRHKcCOmTahZkmVsyc3W+MSk3jY03m+a7tGHkIsdVMG9l10/3HvFbWkkKzY5VFp3pkRsIo/UYgmFL7Q==",
+      "scripts": {
+        "dev": "vitest",
+        "lint": "oxlint . && oxfmt --check src test",
+        "test": "pnpm lint && pnpm typecheck && vitest run --coverage",
+        "build": "obuild",
+        "format": "oxlint . --fix && oxfmt src test",
+        "release": "pnpm test && pnpm build && changelogen --release --push && pnpm publish",
+        "typecheck": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {
+        "defu": "^6.1.7",
+        "destr": "^2.0.5"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "react",
+      "version": "19.3.1",
+      "integrity": "sha512-QNhWdt7nrgVWWQG58QuGsAR3jv3Hbe4mb4vz7w2csnHavciZJgda1CPNaldF6eVxv90ud3jUXpKlHL69gO38yw==",
+      "scripts": {},
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "react-dom",
+      "version": "19.3.1",
+      "integrity": "sha512-Y0bARz53lhEC1NMCASs0/j+faB/zqt3R8hpvg1e8+61ZVJ4UL0UdC4cBbXfZMcIuhrfgeILTLe+ZeBCavQPtKQ==",
+      "scripts": {
+        "start": "node server.js"
+      },
+      "engines": {},
+      "dependencies": {
+        "scheduler": "^0.28.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "react": "^19.3.1"
+      },
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "readdirp",
+      "version": "5.1.1",
+      "integrity": "sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA==",
+      "scripts": {
+        "test": "node test/index.test.js",
+        "build": "tsc",
+        "format": "prettier --write index.ts test/index.test.js"
+      },
+      "engines": {
+        "node": ">= 20.19.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "remeda",
+      "version": "2.33.4",
+      "integrity": "sha512-ygHswjlc/opg2VrtiYvUOPLjxjtdKvjGz1/plDhkG66hjNjFr1xmfrs2ClNFo/E6TyUFiwYNh53bKV26oBoMGQ==",
+      "scripts": {
+        "lint": "eslint --fix --max-warnings 0 --cache --cache-location ./node_modules/.cache/eslint/",
+        "test": "vitest",
+        "build": "tsdown",
+        "check": "tsc --project tsconfig.source.json",
+        "format": "prettier . --write",
+        "release": "semantic-release",
+        "check:dist": "tsc --project tsconfig.dist.json",
+        "test:types": "vitest --project types",
+        "publish:jsr": "jsr publish",
+        "test:runtime": "vitest --project runtime",
+        "test:coverage": "vitest run --coverage --project runtime",
+        "publish:preview": "pkg-pr-new publish --compact --template ../stackblitz-template/"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "require-from-string",
+      "version": "2.0.2",
+      "integrity": "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==",
+      "scripts": {
+        "test": "mocha"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "ret",
+      "version": "0.5.1",
+      "integrity": "sha512-Z/nyvABwcRnRD2mMP7Kz6G1dFZZqX1mNErOnxF42OCQKE07b9k9hK9SQxHL3LFEZUdzQaLM4dId1E/E6Vm4WhA==",
+      "scripts": {
+        "lint": "eslint ./lib ./test",
+        "test": "nyc --extension .ts --reporter=lcov --reporter=text-summary npm run test:unit",
+        "build": "tsc -p tsconfig.build.json",
+        "prepare": "tsc -p tsconfig.build.json",
+        "lint:fix": "eslint --fix ./lib ./test",
+        "test:unit": "mocha --require ts-node/register test/*-test.ts"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "retry",
+      "version": "0.12.0",
+      "integrity": "sha512-9LkiTwjUh6rT555DtE9rTX+BKByPfrMzEAtnlEtdEwr3Nkffwiihqe2bWADg+OQRjt9gl6ICdmB/ZFDCGAtSow==",
+      "scripts": {
+        "test": "istanbul cover ./node_modules/tape/bin/tape ./test/integration/*.js",
+        "release:major": "env SEMANTIC=major npm run release",
+        "release:minor": "env SEMANTIC=minor npm run release",
+        "release:patch": "env SEMANTIC=patch npm run release",
+        "release": "npm version ${SEMANTIC:-patch} -m \"Release %s\" && git push && git push --tags && npm publish"
+      },
+      "engines": {
+        "node": ">= 4"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "robust-predicates",
+      "version": "3.0.3",
+      "integrity": "sha512-NS3levdsRIUOmiJ8FZWCP7LG3QpJyrs/TE0Zpf1yvZu8cAJJ6QMW92H1c7kWpdIHo8RvmLxN/o2JXTKHp74lUA==",
+      "scripts": {
+        "build": "mkdir -p esm && node compile.js",
+        "lint": "eslint *.js src test/test.js",
+        "pretest": "npm run lint && npm run build",
+        "test": "node --test",
+        "cov": "node --test --experimental-test-coverage",
+        "bench": "node bench.js",
+        "prepublishOnly": "npm run test && rollup -c"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "rou3",
+      "version": "0.9.2",
+      "integrity": "sha512-3SOzvaAg8rkHrXtRjpCvCvbyO5to9oOO27Z/XqHEYXfMRVSw/qMIVdmaOk9W2lcRLtR6dlqTjo9hDeJk70QBYQ==",
+      "scripts": {
+        "dev": "vitest",
+        "lint": "oxlint . && oxfmt --check src test",
+        "test": "pnpm lint && pnpm test:types && vitest run --coverage",
+        "build": "obuild",
+        "release": "pnpm test && pnpm build && changelogen --release && git push --follow-tags && npm publish",
+        "lint:fix": "automd && oxlint --fix . && oxfmt src test",
+        "bench:bun": "bun ./test/bench",
+        "bench:deno": "deno run -A ./test/bench/index.ts",
+        "bench:node": "node --expose-gc --allow-natives-syntax --disable-warning=ExperimentalWarning --experimental-strip-types ./test/bench/index.ts",
+        "test:types": "tsgo --noEmit"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "safe-regex2",
+      "version": "5.1.2",
+      "integrity": "sha512-tAtCGFPPP02VroDVzp4daGi6bC7jWG+41D47GKf18FeH/ubvKQHT9VmhAkvtjNOmJwqtApzWeUpEhkyEYULvmw==",
+      "scripts": {
+        "lint": "eslint",
+        "test": "npm run test:unit && npm run test:typescript",
+        "lint:fix": "eslint --fix",
+        "test:unit": "c8 --100 node --test",
+        "test:typescript": "tstyche"
+      },
+      "engines": {},
+      "dependencies": {
+        "ret": "~0.5.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "safer-buffer",
+      "version": "2.1.2",
+      "integrity": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==",
+      "scripts": {
+        "browserify-test": "browserify --external tape tests.js > browserify-tests.js && tape browserify-tests.js",
+        "test": "standard && tape tests.js"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "scheduler",
+      "version": "0.28.0",
+      "integrity": "sha512-juorfCmIkIw8tT+p5BXSm6PJjQF/ycEYmKyzURCIt/RaZIhL+PulbQ9Yu2z1HdOJDdqDTlxA1+xKBmHXJsczAw==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "semver",
+      "version": "7.8.5",
+      "integrity": "sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==",
+      "scripts": {
+        "lint": "npm run eslint",
+        "snap": "tap",
+        "test": "tap",
+        "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
+        "lintfix": "npm run eslint -- --fix",
+        "postlint": "template-oss-check",
+        "posttest": "npm run lint",
+        "template-oss-apply": "template-oss-apply --force"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "set-cookie-parser",
+      "version": "3.2.1",
+      "integrity": "sha512-Npd1Pt+4zb3BrSZDPd2qFwRpS6b1EUEasRrO8xS0zMJi0fApXXK5YuzP0minyJnxwnFHoVoJwA55q0A0cu63gQ==",
+      "scripts": {
+        "lint": "eslint . --ignore-pattern '!.eslintrc.js'",
+        "test": "npm run build && npm run lint && mocha && npm run typecheck",
+        "build": "node ./build-cjs.js",
+        "format": "npm run lint -- --fix",
+        "autofix": "npm run lint -- --fix",
+        "prepare": "husky",
+        "typecheck": "tsd"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "sharp",
+      "version": "0.35.5",
+      "integrity": "sha512-Ywn4OnzGukp7CDMrp08RQ50YKmuwG47brZgIVPTvBaaAfQlRlygrRqSrxdCiL9M+LlzLBiJ68IR1QqvzHyjC7g==",
+      "scripts": {
+        "lint": "npm run lint-cpp && npm run lint-js && npm run lint-types && npm run lint-publish",
+        "test": "npm run lint && npm run test-unit",
+        "build": "node install/build.js",
+        "clean": "rm -rf src/build/ test/fixtures/output.*",
+        "lint-js": "biome lint",
+        "lint-cpp": "cpplint --quiet src/*.h src/*.cc",
+        "test-leak": "./test/leak/leak.sh",
+        "test-unit": "node --experimental-test-coverage test/unit.mjs",
+        "build:dist": "node scripts/build.mjs",
+        "docs-build": "node docs/build.mjs",
+        "docs-serve": "cd docs && npm start",
+        "lint-types": "tsd --files ./test/types/sharp.test-d.{cts,mts}",
+        "docs-publish": "cd docs && npm run build && npx firebase-tools deploy --project pixelplumbing --only hosting:pixelplumbing-sharp",
+        "lint-publish": "publint --strict",
+        "package-release-notes": "node npm/release-notes.js",
+        "package-wasm-wrappers": "node npm/wasm-wrappers.js",
+        "package-from-local-build": "node npm/from-local-build.js"
+      },
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "dependencies": {
+        "semver": "^7.8.5",
+        "@img/colour": "^1.1.0",
+        "detect-libc": "^2.1.2"
+      },
+      "optionalDependencies": {
+        "@img/sharp-linux-arm": "0.35.5",
+        "@img/sharp-linux-x64": "0.35.5",
+        "@img/sharp-win32-x64": "0.35.5",
+        "@img/sharp-darwin-x64": "0.35.5",
+        "@img/sharp-win32-ia32": "0.35.5",
+        "@img/sharp-linux-arm64": "0.35.5",
+        "@img/sharp-linux-ppc64": "0.35.5",
+        "@img/sharp-linux-s390x": "0.35.5",
+        "@img/sharp-win32-arm64": "0.35.5",
+        "@img/sharp-darwin-arm64": "0.35.5",
+        "@img/sharp-linux-riscv64": "0.35.5",
+        "@img/sharp-linuxmusl-x64": "0.35.5",
+        "@img/sharp-freebsd-wasm32": "0.35.5",
+        "@img/sharp-linuxmusl-arm64": "0.35.5",
+        "@img/sharp-libvips-linux-arm": "1.3.4",
+        "@img/sharp-libvips-linux-x64": "1.3.4",
+        "@img/sharp-libvips-darwin-x64": "1.3.4",
+        "@img/sharp-libvips-linux-arm64": "1.3.4",
+        "@img/sharp-libvips-linux-ppc64": "1.3.4",
+        "@img/sharp-libvips-linux-s390x": "1.3.4",
+        "@img/sharp-libvips-darwin-arm64": "1.3.4",
+        "@img/sharp-webcontainers-wasm32": "0.35.5",
+        "@img/sharp-libvips-linux-riscv64": "1.3.4",
+        "@img/sharp-libvips-linuxmusl-x64": "1.3.4",
+        "@img/sharp-libvips-linuxmusl-arm64": "1.3.4"
+      },
+      "peerDependencies": {},
+      "peerDependenciesMeta": {
+        "@types/node": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "shebang-command",
+      "version": "2.0.0",
+      "integrity": "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==",
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "dependencies": {
+        "shebang-regex": "^3.0.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "shebang-regex",
+      "version": "3.0.0",
+      "integrity": "sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==",
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "signal-exit",
+      "version": "3.0.7",
+      "integrity": "sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==",
+      "scripts": {
+        "test": "tap",
+        "snap": "tap",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "prepublishOnly": "git push origin --follow-tags"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "signal-exit",
+      "version": "4.1.0",
+      "integrity": "sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==",
+      "scripts": {
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "prepublishOnly": "git push origin --follow-tags",
+        "preprepare": "rm -rf dist",
+        "prepare": "tsc -p tsconfig.json && tsc -p tsconfig-esm.json && bash ./scripts/fixup.sh",
+        "pretest": "npm run prepare",
+        "presnap": "npm run prepare",
+        "test": "c8 tap",
+        "snap": "c8 tap",
+        "format": "prettier --write . --loglevel warn",
+        "typedoc": "typedoc --tsconfig tsconfig-esm.json ./src/*.ts"
+      },
+      "engines": {
+        "node": ">=14"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "sql-escaper",
+      "version": "1.5.2",
+      "integrity": "sha512-6CKD38c31SENivxOADeMNLdukOnUxUcflKtzVWzace7Riv1v7cAEym5Cx9Q7gYZ3ezIJI7ZpqecQq8cqNeSSFg==",
+      "scripts": {
+        "lint": "biome lint --error-on-warnings && prettier --check .",
+        "build": "rm -rf ./lib && tsc && npm run build:esm",
+        "update": "pu && npm i && (npm audit fix || true) && npm run lint:fix",
+        "lint:fix": "biome lint --write && prettier --write .github/workflows/*.yml .",
+        "test:bun": "bun --bun poku -r=\"compact\" test",
+        "benchmark": "cd benchmark && npm ci && bash index.sh",
+        "build:esm": "esbuild src/index.ts --outfile=lib/index.mjs --platform=node --target=node12 --format=esm",
+        "test:node": "poku test -r=\"compact\"",
+        "test:coverage": "mcr --import tsx --config mcr.config.ts npm run test:node"
+      },
+      "engines": {
+        "bun": ">=1.0.0",
+        "deno": ">=2.0.0",
+        "node": ">=12.0.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "std-env",
+      "version": "3.10.0",
+      "integrity": "sha512-5GS12FdOZNliM5mAOxFRg7Ir0pWz8MdpYm6AY6VPkGpbA7ZzmbzNcBJQ0GPvvyWgcY7QAhCgf9Uy89I03faLkg==",
+      "scripts": {
+        "dev": "vitest",
+        "lint": "eslint . && prettier -c src test",
+        "test": "pnpm lint && pnpm typecheck && vitest run --coverage",
+        "build": "unbuild",
+        "prepack": "unbuild",
+        "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
+        "lint:fix": "eslint --fix . && prettier -w src test",
+        "play:bun": "bun playground/bun.ts",
+        "play:deno": "pnpm build && deno run -A playground/deno.ts",
+        "play:node": "pnpm build && node playground/node.mjs",
+        "typecheck": "tsc --noEmit"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "streamsearch",
+      "version": "1.1.0",
+      "integrity": "sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==",
+      "scripts": {
+        "test": "node test/test.js",
+        "lint": "eslint --cache --report-unused-disable-directives --ext=.js .eslintrc.js lib test",
+        "lint:fix": "npm run lint -- --fix"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "tslib",
+      "version": "2.8.1",
+      "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "tslib",
+      "version": "1.14.1",
+      "integrity": "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "typescript",
+      "version": "6.0.3",
+      "integrity": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
+      "scripts": {
+        "gulp": "hereby",
+        "knip": "hereby knip",
+        "lint": "hereby lint",
+        "test": "hereby runtests-parallel --light=false",
+        "build": "npm run build:compiler && npm run build:tests",
+        "clean": "hereby clean",
+        "format": "dprint fmt",
+        "build:tests": "hereby tests",
+        "setup-hooks": "node scripts/link-hooks.mjs",
+        "build:compiler": "hereby local",
+        "test:eslint-rules": "hereby run-eslint-rules-tests",
+        "build:tests:notypecheck": "hereby tests --no-typecheck"
+      },
+      "engines": {
+        "node": ">=14.17"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "undici-types",
+      "version": "8.9.0",
+      "integrity": "sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg==",
+      "scripts": {},
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "valibot",
+      "version": "1.4.2",
+      "integrity": "sha512-gjdCvJ6d3RyHAneqxMYMW9QMCwYMb3jpOO0IyHZV1bnRHFBHrX3VkIILt5XYR0WhwHiH7Mty8ovuPZ/O3gamrg==",
+      "scripts": {
+        "lint": "eslint \"src/**/*.ts*\" && tsc --noEmit && deno check ./src/index.ts",
+        "play": "tsm ./playground.ts",
+        "test": "vitest --typecheck",
+        "build": "tsdown",
+        "format": "prettier --write ./src",
+        "coverage": "vitest run --coverage --isolate",
+        "lint.fix": "eslint \"src/**/*.ts*\" --fix",
+        "format.check": "prettier --check ./src"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "typescript": ">=5"
+      },
+      "peerDependenciesMeta": {
+        "typescript": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "which",
+      "version": "2.0.2",
+      "integrity": "sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==",
+      "scripts": {
+        "test": "tap",
+        "changelog": "git add CHANGELOG.md",
+        "prepublish": "npm run changelog",
+        "preversion": "npm test",
+        "postpublish": "git push origin --follow-tags",
+        "postversion": "npm publish",
+        "prechangelog": "bash gen-changelog.sh",
+        "postchangelog": "git commit -m 'update changelog - '${npm_package_version}"
+      },
+      "engines": {
+        "node": ">= 8"
+      },
+      "dependencies": {
+        "isexe": "^2.0.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "ws",
+      "version": "8.22.0",
+      "integrity": "sha512-Ydggc987+RO0AnWtZ/7Wq9FtNvcrL1b/RO0ud9mWjUPgDrsAAwQSF51sm2hm1XofbU/4jkpGEsLFsZZxU+1DOg==",
+      "scripts": {
+        "lint": "eslint . && prettier --check --ignore-path .gitignore \"**/*.{json,md,yaml,yml}\"",
+        "test": "nyc --reporter=lcov --reporter=text mocha --throw-deprecation test/*.test.js",
+        "integration": "mocha --throw-deprecation test/*.integration.js"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "bufferutil": "^4.0.1",
+        "utf-8-validate": ">=5.0.2"
+      },
+      "peerDependenciesMeta": {
+        "bufferutil": {
+          "optional": true
+        },
+        "utf-8-validate": {
+          "optional": true
+        }
+      }
+    },
+    {
+      "name": "zeptomatch",
+      "version": "2.1.0",
+      "integrity": "sha512-KiGErG2J0G82LSpniV0CtIzjlJ10E04j02VOudJsPyPwNZgGnRKQy7I1R7GMyg/QswnE4l7ohSGrQbQbjXPPDA==",
+      "scripts": {
+        "benchmark": "tsex benchmark",
+        "benchmark:watch": "tsex benchmark --watch",
+        "clean": "tsex clean",
+        "compile": "tsex compile",
+        "compile:watch": "tsex compile --watch",
+        "test": "tsex test",
+        "test:watch": "tsex test --watch",
+        "prepublishOnly": "tsex prepare"
+      },
+      "engines": {},
+      "dependencies": {
+        "grammex": "^3.1.11",
+        "graphmatch": "^1.1.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "zod",
+      "version": "4.6.7",
+      "integrity": "sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg==",
+      "scripts": {
+        "test": "nub exec --node vitest run",
+        "build": "nub exec --node zshy --project tsconfig.build.json",
+        "clean": "git clean -xdf . -e node_modules",
+        "postbuild": "nub ../../scripts/write-stub-package-jsons.ts && nub exec --node biome check --write .",
+        "test:watch": "nub exec --node vitest",
+        "prepublishOnly": "nub ../../scripts/check-versions.ts"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    },
+    {
+      "name": "zod",
+      "version": "4.4.3",
+      "integrity": "sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==",
+      "scripts": {
+        "test": "pnpm vitest run",
+        "build": "zshy --project tsconfig.build.json",
+        "clean": "git clean -xdf . -e node_modules",
+        "postbuild": "tsx ../../scripts/write-stub-package-jsons.ts && pnpm biome check --write .",
+        "test:watch": "pnpm vitest",
+        "prepublishOnly": "tsx ../../scripts/check-versions.ts"
+      },
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {},
+      "peerDependenciesMeta": {}
+    }
+  ],
+  "iocPairs": 2317,
+  "verdict": "SAFE_NO_KNOWN_IOC",
+  "limits": [
+    "Registry-resolved dependency, optional and required peer graph; actual pnpm lock must be rechecked before code execution.",
+    "Known IOC scan only, not proof of malware absence."
+  ]
+}

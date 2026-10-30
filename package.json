@@ -1,0 +1,46 @@
+{
+  "name": "portfolio-1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "typecheck": "nuxt typecheck",
+    "test": "node --test tests/backend.test.mjs tests/scroll-motion.test.mjs tests/asset-path.test.mjs tests/setup-local.test.mjs tests/unsaved-changes.test.mjs tests/seed-demo.test.mjs tests/read-owner-password.test.mjs",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate deploy",
+    "setup:local": "node scripts/setup-local.mjs",
+    "seed:demo": "node scripts/seed-demo.ts",
+    "owner:setup": "node --env-file=.env scripts/provision-owner.ts",
+    "owner:reset": "node --env-file=.env scripts/provision-owner.ts --reset"
+  },
+  "dependencies": {
+    "@better-auth/prisma-adapter": "1.7.14",
+    "@iconify-json/lucide": "1.2.149",
+    "@iconify-json/simple-icons": "1.2.101",
+    "@nuxt/ui": "^4.12.0",
+    "@prisma/adapter-libsql": "7.10.1",
+    "@prisma/client": "7.10.1",
+    "better-auth": "1.7.14",
+    "busboy": "1.6.0",
+    "h3": "2.0.8",
+    "nuxt": "4.6.3",
+    "pdf-lib": "1.17.1",
+    "sharp": "0.35.5",
+    "tailwindcss": "^4.3.3",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.17.0",
+    "@types/busboy": "1.5.5",
+    "eslint": "^10.13.0",
+    "eslint-plugin-better-tailwindcss": "^4.10.0",
+    "prisma": "8.0.0-rc.28",
+    "typescript": "7.0.2",
+    "vue-tsc": "^3.3.13"
+  },
+  "packageManager": "pnpm@12.15.0"
+}
